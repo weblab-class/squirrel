@@ -11,7 +11,7 @@ const NavBar = () => {
     <nav className="NavBar-container">
       {/* <div className="NavBar-title u-inlineBlock">TBD Logo</div> */}
       <div className="NavBar-linkContainer u-inlineBlock">
-        <Link to ="/">
+        <Link to ="/" className="NavBar-link">
             <GiSquirrel/> TBD Logo
         </Link>
 
