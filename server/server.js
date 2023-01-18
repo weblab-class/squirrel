@@ -33,9 +33,9 @@ const socketManager = require("./server-socket");
 
 // Server configuration below
 // TODO change connection URL after setting up your team database
-const mongoConnectionURL = "mongodb+srv://wisp:mIsP0xYjDhz0xpw4@squirrel-server.d3j6rx7.mongodb.net/?retryWrites=true&w=majority";
+const mongoConnectionURL = process.env.MONGO_SRV;
 // TODO change database name to the name you chose
-const databaseName = "squirrel-server";
+const databaseName = process.env.DB_NAME;
 
 // connect to mongodb
 mongoose
