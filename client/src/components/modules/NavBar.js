@@ -2,16 +2,17 @@ import React from "react";
 import { Link } from "@reach/router";
 import {FaCalendarAlt, FaEnvelope, FaBell} from "react-icons/fa";
 import { BsPersonCircle } from "react-icons/bs";
+import { GiSquirrel } from "react-icons/gi";
 
 import "./NavBar.css";
 
 const NavBar = () => {
   return (
     <nav className="NavBar-container">
-      <div className="NavBar-title u-inlineBlock">TBD Logo</div>
+      {/* <div className="NavBar-title u-inlineBlock">TBD Logo</div> */}
       <div className="NavBar-linkContainer u-inlineBlock">
-        <Link to="/" className="NavBar-link">
-          Search Bar
+        <Link to ="/">
+            <GiSquirrel/> TBD Logo
         </Link>
 
         <Link to="/calendar/" className="NavBar-link">
