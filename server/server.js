@@ -25,6 +25,9 @@ const session = require("express-session"); // library that stores info about ea
 const mongoose = require("mongoose"); // library to connect to MongoDB
 const path = require("path"); // provide utilities for working with file and directory paths
 
+const dotenv = require('dotenv'); // library to read .env file
+dotenv.config();
+
 const api = require("./api");
 const auth = require("./auth");
 
