@@ -45,11 +45,6 @@ const App = () => {
     <>
       <NavBar />
         <div className="App-container">
-          <Router>
-            <Feed path="/" />
-            <Profile path="/profile/" />
-            <NotFound default />
-          </Router>
         </div>
       
       <Router>
