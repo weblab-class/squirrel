@@ -2,3 +2,12 @@
 
 
 */
+
+:root {
+    --background_color: white;
+    --foreground_color_dark: #425164;
+    --foreground_color_light: #899FB6;
+    --tan: #DABB96;
+    --brown: #2F1710;
+}
+
