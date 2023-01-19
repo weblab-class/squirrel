@@ -45,19 +45,19 @@ const App = () => {
     <>
       <NavBar />
         <div className="App-container">
-          <Router>
-            <Feed path="/" />
-            <Profile path="/profile/" />
-            <NotFound default />
-          </Router>
         </div>
       
+
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <NotFound default />
+        
       </Router>
     </>
   );
 };
 
 export default App;
+
+
+//<Home path='/home' />
