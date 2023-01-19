@@ -1,6 +1,7 @@
 .NavBar-container {
     padding: var(--s) var(--m);
     background-color: var(--primary);
+    width: 100%;
   }
   
   .NavBar-title {
@@ -10,6 +11,8 @@
   
   .NavBar-linkContainer {
     margin-left: var(--l);
+    /* position: right; */
+    
   }
   
   .NavBar-link,
@@ -27,3 +30,13 @@
     margin-left: var(--m);
   }
   
+  .right-align{
+    justify-content: flex-end;
+  }
+
+  .icons{
+    margin-left: auto;
+    margin-right: 0;
+    justify-content: flex-end;
+    /* float: right; */
+}
