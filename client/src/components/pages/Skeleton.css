@@ -1,4 +1,16 @@
-/* Fill me in :) */
+/* Color Groups: #2F1710 #425164 #DABB96 #899FB6
+
+
+*/
+
+:root {
+    --background_color: white;
+    --foreground_color_dark: #425164;
+    --foreground_color_light: #899FB6;
+    --tan: #DABB96;
+    --brown: #2F1710;
+}
+
 .messagesColumn {
     text-align: center;
     width: 75%;
@@ -59,4 +71,4 @@
     font-weight: bold;
     background-color: antiquewhite;
   }
-  
+
