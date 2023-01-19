@@ -48,13 +48,18 @@ const App = () => {
         <div className="App-container">
         </div>
       
+
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <Profile path="/profile" /> 
         <NotFound default />
+        
       </Router>
     </>
   );
 };
 
 export default App;
+
+
+//<Home path='/home' />
