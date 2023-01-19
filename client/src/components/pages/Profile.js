@@ -3,8 +3,6 @@ import { Link } from "@reach/router";
 
 const Profile = (props) => {
     const [user, setUser] = useState()
-    const [location, setLocation] = useState()
-    const [badges, setBadges] = useState([])
     
     useEffect(() => {
         document.title = "Profile Page";
@@ -20,7 +18,27 @@ const Profile = (props) => {
                 <div className="Profile-avatar" />
             </div>
 
-            <h1 className="Profile-name u-textLeft">{user.name}</h1>
+            <h1 className="Profile-name u-textLeft">
+                {user.name}
+            </h1>
+
+            <div className="Profile-location u-textCenter">
+                {user.location}
+            </div>
+
+            <div className="Profile-foodRestrictions u-textCenter">
+                Food Restrictions: {user.preferences.restrictions}
+            </div>
+
+            <div className="Profile-Allergies u-textCenter">
+                Allergies: {user.preferences.allergies}
+            </div>
+
+            <div className="Cooking Preferences u-textCenter">
+                Cooking Preferences: {user.preferences.time}
+            </div>
         </>
     )
 }
+
+export default Profile;
