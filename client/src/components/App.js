@@ -5,6 +5,7 @@ import NavBar from "./modules/NavBar.js";
 import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import Profile from "./pages/Profile.js";
+import Messages from "./pages/Messages.js";
 
 import "../utilities.css";
 
@@ -52,6 +53,7 @@ const App = () => {
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <Profile path="/profile" /> 
+        <Messages path="/messages"/>
         <NotFound default />
         
       </Router>
