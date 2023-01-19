@@ -23,14 +23,24 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
       ) : (
         <GoogleLogin onSuccess={handleLogin} onError={(err) => console.log(err)} />
       )}   
-      <div class="row">
-          <div class="column">Messages</div>
-          <div class="column">Forum</div>
-          <div class="column">Events</div>
+      <div class="HomeContainer">
+          <div class="messagesColumn">
+            <div class="Title">Messages</div>
+          </div>
+          <div class="forumColumn">
+            <div class="Title">Forum</div>
+          </div>
+          <div class="messagesColumn">
+            <div class="eventsColumn">
+              <div class="Title">Events</div>
+            </div>
+            <div class="recommendationsColumn"> 
+              <div class="Title">Connections</div>
+            </div>
+          </div>
+          
       </div>
-      <a href="https://docs.google.com/document/d/110JdHAn3Wnp3_AyQLkqH2W8h5oby7OVsYIeHYSiUzRs/edit?usp=sharing">
-        Check out this getting started guide
-      </a>
+
     </GoogleOAuthProvider>
   );
 };

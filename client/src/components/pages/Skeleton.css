@@ -1,12 +1,40 @@
 /* Fill me in :) */
-.column {
-    float: left;
-    width: 33.33%;
+.messagesColumn {
     text-align: center;
-    font-weight: 300;
-    font-size: larger;
+    width: 75%;
+    font-weight: bold;
+    font-size: x-large;
+    padding-left: 20px;
+    padding-right: 20px;
   }
-  
+  .forumColumn {
+    text-align: center;
+    width: 75%;
+    font-weight: bold;
+    font-size: x-large;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .eventsColumn {
+    /* text-align: center; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    font-weight: bold;
+    font-size: x-large;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .recommendationsColumn{
+    /* text-align: center; */
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    font-weight: bold;
+    font-size: x-large;
+    position: relative;
+    top: 50px;
+  }
   /* Clear floats after the columns */
   .row:after {
     content: "";
@@ -16,3 +44,19 @@
     font-size: larger;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   }
+
+
+  .HomeContainer { 
+    display: grid;
+    grid-template-columns: 1.5fr 2.5fr 1fr;
+    text-align: center;
+    
+  } 
+
+  .Title {
+    text-align: center;
+    font-size: x-large;
+    font-weight: bold;
+    background-color: antiquewhite;
+  }
+  
