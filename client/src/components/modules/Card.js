@@ -15,6 +15,7 @@ import "./Card.css";
  * @param {string} creator_id
  * @param {string} content of the story
  */
+
 const Card = (props) => {
   const [comments, setComments] = useState([]);
 

@@ -33,6 +33,8 @@ const NavBar = () => {
                 <BsPersonCircle /> Profile
             </Link>
         </Navbar.Collapse>
+
+        
     </nav>
   );
 };
