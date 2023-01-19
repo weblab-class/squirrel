@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
 
+
+import "./Messages.css";
+
 const Messages = (props) => {
     const [stories, setStories] = useState([]);
 
@@ -11,8 +14,18 @@ const Messages = (props) => {
 
     return(
         <>
-            <h1>Messages</h1>
-            <h2>Groups</h2>
+            <div class="container">
+                <div class=".Messages-title">
+                    <h1>Messages</h1>
+                    <h2>Groups</h2>
+                </div>
+
+                <div class="lines">
+                    <div class="diamond"></div>
+                </div>
+
+
+            </div>
         </>
     )
 

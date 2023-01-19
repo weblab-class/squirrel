@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "@reach/router";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 
 import "../../utilities.css";
@@ -25,7 +26,10 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
       )}   
       <div class="HomeContainer">
           <div class="messagesColumn">
-            <div class="Title">Messages</div>
+            {/* <div class="Title">Messages</div> */}
+            <Link to="/messages/" className="Title">
+                Messages
+            </Link>
           </div>
           <div class="forumColumn">
             <div class="Title">Forum</div>
@@ -38,7 +42,6 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
               <div class="Title">Connections</div>
             </div>
           </div>
-          
       </div>
 
     </GoogleOAuthProvider>
