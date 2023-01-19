@@ -50,7 +50,7 @@ const App = () => {
       
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-        <Profile path="/profile/" /> 
+        <Profile path="/profile" /> 
         <NotFound default />
       </Router>
     </>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 import { Link } from "@reach/router";
 
 const Profile = (props) => {
@@ -6,14 +6,14 @@ const Profile = (props) => {
     
     useEffect(() => {
         document.title = "Profile Page";
-        get(`/api/user`, { userid: props.userId }).then((userObj) => setUser(userObj));
+        // get(`/api/user`, { userid: props.userId }).then((userObj) => setUser(userObj));
       }, []);
     
     if(!user){
         return(<div> Loading! Feel free to grab a coffee as you wait uwu </div>)
     }
     return(
-        <>
+        <div>
             <div className="Profile-avatarContainer">
                 <div className="Profile-avatar" />
             </div>
@@ -37,7 +37,7 @@ const Profile = (props) => {
             <div className="Cooking Preferences u-textCenter">
                 Cooking Preferences: {user.preferences.time}
             </div>
-        </>
+        </div>
     )
 }
 
