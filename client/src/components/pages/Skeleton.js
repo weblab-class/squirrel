@@ -35,7 +35,7 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
               <div class="Title">Events</div>
             </div>
             <div class="recommendationsColumn"> 
-              <div class="Title">Connections</div>
+              <span class="Title">Connections</span>
             </div>
           </div>
           
