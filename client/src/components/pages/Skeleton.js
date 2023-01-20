@@ -26,7 +26,6 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
       )}   
       <div class="HomeContainer">
           <div class="messagesColumn">
-            {/* <div class="Title">Messages</div> */}
             <Link to="/messages/" className="Title">
                 Messages
             </Link>
@@ -36,7 +35,9 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
           </div>
           <div class="messagesColumn">
             <div class="eventsColumn">
-              <div class="Title">Events</div>
+              <Link to="/calendar/" className="Title">
+                  Events
+              </Link>
             </div>
             <div class="recommendationsColumn"> 
               <div class="Title">Connections</div>
