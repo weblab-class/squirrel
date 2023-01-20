@@ -45,18 +45,23 @@ const App = () => {
 
   return (
     <>
-      <NavBar />
-        <div className="App-container">
-        </div>
+      <NavBar
+         handleLogin={handleLogin}
+         handleLogout={handleLogout}
+         userId={userId}
+      />
+      <div className="App-container">
+        <Router>
+          <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+          <Profile path="/profile" /> 
+          <Messages path="/messages"/>
+          <NotFound default />
+          
+        </Router>
+      </div>
       
 
-      <Router>
-        <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-        <Profile path="/profile" /> 
-        <Messages path="/messages"/>
-        <NotFound default />
-        
-      </Router>
+      
     </>
   );
 };
