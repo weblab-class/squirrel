@@ -24,22 +24,22 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
       ) : (
         <GoogleLogin onSuccess={handleLogin} onError={(err) => console.log(err)} />
       )}   
-      <div class="HomeContainer">
-          <div class="messagesColumn">
+      <div className="HomeContainer">
+          <div className="messagesColumn">
             {/* <div class="Title">Messages</div> */}
             <Link to="/messages/" className="Title">
                 Messages
             </Link>
           </div>
-          <div class="forumColumn">
-            <div class="Title">Forum</div>
+          <div className="forumColumn">
+            <div className="Title">Forum</div>
           </div>
-          <div class="messagesColumn">
-            <div class="eventsColumn">
-              <div class="Title">Events</div>
+          <div className="messagesColumn">
+            <div className="eventsColumn">
+              <div className="Title">Events</div>
             </div>
-            <div class="recommendationsColumn"> 
-              <span class="Title">Connections</span>
+            <div className="recommendationsColumn"> 
+              <span className="Title">Connections</span>
             </div>
           </div>
       </div>
