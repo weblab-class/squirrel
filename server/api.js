@@ -119,6 +119,10 @@ router.get("/get_events", (req, res) => {
   });
 });
 
+router.post("/del_event", (req, res) => {
+  Event.findOneAndDelete({title: req.body.title, start: req.body.start, end: req.body.end}, (err) => {if (err) console.error(err);})
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);
