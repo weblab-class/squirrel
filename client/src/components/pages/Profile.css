@@ -4,6 +4,13 @@
     position: relative;
 }
 
+.bigContainer{
+  position: absolute;
+  top: 46px;
+  min-height: 100%;
+  width: 100vw;
+}
+
 .lines::after{
     content:'';
     position: absolute;

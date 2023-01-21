@@ -115,6 +115,7 @@ const Forum = (props) => {
   return (
     <>
         <NavBar/>
+        {/* <NavBar userId ={userId} handleLogin={handleLogin} handleLogout={handleLogout}/> */}
       <div className="u-relative Forum-container">
         <h1 className="forum-title">Forum</h1>
         {/* <div className="Forum-userList">

@@ -47,10 +47,9 @@ const App = () => {
 
   return (
     <>
-      {/* <NavBar /> */}
+      <NavBar userId ={userId} handleLogin={handleLogin} handleLogout={handleLogout}/>
         <div className="App-container">
         </div>
-      
 
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />

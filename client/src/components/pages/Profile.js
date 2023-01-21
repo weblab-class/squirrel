@@ -14,11 +14,16 @@ const Profile = (props) => {
       }, []);
     
     if(!user){
-        return(<div> Loading! Feel free to grab a coffee as you wait uwu </div>)
+        return(<div className="Loading">
+            {/* <NavBar/> */}
+            {/* <NavBar userId ={userId} handleLogin={handleLogin} handleLogout={handleLogout}/> */}
+            <br/>
+        Loading! Feel free to grab a coffee as you wait! </div>)
     }
     return(
-        <div>
-            <NavBar/>
+        <div className="bigContainer">
+            {/* <NavBar/> */}
+            {/* <NavBar userId ={userId} handleLogin={handleLogin} handleLogout={handleLogout}/> */}
             <div className="Profile-avatarContainer">
                 <div className="Profile-avatar" />
             </div>
