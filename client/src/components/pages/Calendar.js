@@ -5,7 +5,7 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from './event-utils'
 import NavBar from '../modules/NavBar.js'
-import { post } from "../../utilities";
+import { post, get } from "../../utilities";
 import React, { useState } from "react";
 
 import "./Calendar.css"
@@ -46,7 +46,7 @@ export default class Calendar extends React.Component {
             eventContent={renderEventContent} // custom render function
             eventClick={this.handleEventClick}
             eventsSet={this.handleEvents} // called after events are initialized/added/changed/removed
-
+            events="/api/get_events"
             eventChange={function(){}}
             eventRemove={function(){}}
           />
@@ -105,7 +105,7 @@ export default class Calendar extends React.Component {
     if (title) {
 
       console.log("added event yay");
-      const body = { name: title, date: selectInfo.startStr, description: "new event!", group: "global" };
+      const body = { name: title, start: selectInfo.startStr, end: selectInfo.endStr, allDay: selectInfo.allDay, description: "new event!", group: "global" };
       post("/api/event", body).then((comment) => {
          // props.addNewComment(comment);
       });
@@ -119,10 +119,11 @@ export default class Calendar extends React.Component {
       })
     }
   }
-
+  
   handleEventClick = (clickInfo) => {
     if (confirm(`Are you sure you want to delete the event? '${clickInfo.event.title}'`)) {
       clickInfo.event.remove()
+      post("/api/del_event", clickInfo.event).then((res) => console.log(res))
     }
   }
 
