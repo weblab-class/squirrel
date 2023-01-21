@@ -7,6 +7,8 @@ import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from './event-utils'
 import NavBar from '../modules/NavBar.js'
 
+import "./Calendar.css"
+
 export default class Calendar extends React.Component {
   state = {
     weekendsVisible: true,
@@ -19,8 +21,9 @@ export default class Calendar extends React.Component {
 
   render() {
     return (
-      <div className='demo-app'>
+    <div>
         <NavBar/>
+      <div className='demo-app'>
         {this.renderSidebar()}
         <br/>
         <div className='demo-app-main'>
@@ -49,16 +52,10 @@ export default class Calendar extends React.Component {
             eventRemove={function(){}}
             */
           />
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
         </div>
 
 
+      </div>
       </div>
     )
   }
@@ -72,6 +69,7 @@ export default class Calendar extends React.Component {
             <li>Select dates and you will be prompted to create a new event</li>
             <li>Drag, drop, and resize events</li>
             <li>Click an event to delete it</li>
+            <li>Aren't you glad this isn't Google Calendar?</li>
           </ul>
         </div>
         <div className='demo-app-sidebar-section'>

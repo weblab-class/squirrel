@@ -1,6 +1,7 @@
 .Forum-container {
     height: calc(100vh - 120px);
-    width: 100%
+    /* width: 100%; */
+    padding: 0 15px;
   }
   
   .Forum-userList {
