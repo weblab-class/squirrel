@@ -5,6 +5,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from './event-utils'
+import NavBar from '../modules/NavBar.js'
 
 export default class Calendar extends React.Component {
   state = {
@@ -12,10 +13,16 @@ export default class Calendar extends React.Component {
     currentEvents: []
   }
 
+  componentDidMount(){
+    window.scrollTo(0, 0);
+  }
+
   render() {
     return (
       <div className='demo-app'>
+        <NavBar/>
         {this.renderSidebar()}
+        <br/>
         <div className='demo-app-main'>
           <FullCalendar
             plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
@@ -42,7 +49,16 @@ export default class Calendar extends React.Component {
             eventRemove={function(){}}
             */
           />
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
         </div>
+
+
       </div>
     )
   }

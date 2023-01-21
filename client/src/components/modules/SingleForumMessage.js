@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from "react";
 
-import "./SingleGroupMessage.css";
+import "./SingleForumMessage.css";
 
 /**
  * Renders a single chat message
  *
  * Proptypes
- * @param {MessageCommentObject} message
+ * @param {ForumCommentObject} message
  */
-const SingleMessageComment = (props) => {
+const SingleForumComment = (props) => {
   return (
     <div className={"u-flex u-flex-alignCenter SingleMessage-container"}>
       <span className=" SingleMessage-sender u-bold">{props.message.sender.name + ":"}</span>
@@ -17,4 +17,4 @@ const SingleMessageComment = (props) => {
   );
 }
 
-export default SingleMessage;
+export default SingleForumComment;

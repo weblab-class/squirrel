@@ -2,16 +2,18 @@ import React from "react";
 import { Link } from "@reach/router";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 
+import NavBar from "../modules/NavBar.js";
 import "../../utilities.css";
 import "./Skeleton.css";
 import "./pages.css";
 
 //TODO: REPLACE WITH YOUR OWN CLIENT_ID
-const GOOGLE_CLIENT_ID = "48664241058-q3dvrh1u5u8276n9h8iio1evghqf88ob.apps.googleusercontent.com";
+const GOOGLE_CLIENT_ID = "FILL ME IN";
 
 const Skeleton = ({ userId, handleLogin, handleLogout }) => {
   return (
     <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+      <NavBar/>
       {userId ? (
         <button
           onClick={() => {
@@ -24,15 +26,16 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
       ) : (
         <GoogleLogin onSuccess={handleLogin} onError={(err) => console.log(err)} />
       )}   
-      <div className="HomeContainer">
-          <div className="messagesColumn">
-            {/* <div class="Title">Messages</div> */}
+      <div class="HomeContainer">
+          <div class="messagesColumn">
             <Link to="/messages/" className="Title">
                 Messages
             </Link>
           </div>
-          <div className="forumColumn">
-            <div className="Title">Forum</div>
+          <div class="forumColumn">
+            <Link to="/forum/" className="Title">
+                  Forum
+            </Link>
           </div>
           <div class="messagesColumn">
             <div class="eventsColumn">
@@ -40,8 +43,8 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
                   Events
               </Link>
             </div>
-            <div className="recommendationsColumn"> 
-              <span className="Title">Connections</span>
+            <div class="recommendationsColumn"> 
+              <div class="Title">Connections</div>
             </div>
           </div>
       </div>
