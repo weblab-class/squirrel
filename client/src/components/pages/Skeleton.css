@@ -70,6 +70,12 @@
   
 } 
 
+.unloggedinHomeContainer{
+  display: grid;
+  grid-template-columns: 1.5 fr;
+  text-align: center;
+}
+
 .Title {
   text-align: center;
   font-size: x-large;
@@ -84,3 +90,27 @@
 }
 /* .Title:visited{
 } */
+
+.center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.middle {
+  margin: 0;
+  position: absolute;
+  left: 12%;
+}
+.block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #04AA6D;
+  padding: 14px 28px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+}

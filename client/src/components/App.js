@@ -6,7 +6,7 @@ import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import Profile from "./pages/Profile.js";
 import Messages from "./pages/Messages.js";
-
+import Button from "react-bootstrap/Button";
 import "../utilities.css";
 
 import { socket } from "../client-socket.js";
@@ -17,6 +17,7 @@ import { get, post } from "../utilities";
  * Define the "App" component
  */
 const App = () => {
+  //const [loggedIn, setLoggedIn] = useState(false);
   const [userId, setUserId] = useState(undefined);
 
   useEffect(() => {
@@ -24,6 +25,7 @@ const App = () => {
       if (user._id) {
         // they are registed in the database, and currently logged in.
         setUserId(user._id);
+        setLoggedIn(true);
       }
     });
   }, []);
@@ -39,20 +41,17 @@ const App = () => {
   };
 
   const handleLogout = () => {
-    setUserId(undefined);
+    setUserId(null);
     post("/api/logout");
   };
 
   return (
     <>
-      <NavBar
-         handleLogin={handleLogin}
-         handleLogout={handleLogout}
-         userId={userId}
-      />
+      <NavBar handleLogin={handleLogin} handleLogout={handleLogout} userId={userId}/>
       <div className="App-container">
+
         <Router>
-          <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
+          <Skeleton path="/"  userId={userId}/>
           <Profile path="/profile" /> 
           <Messages path="/messages"/>
           <NotFound default />
@@ -64,8 +63,7 @@ const App = () => {
       
     </>
   );
-};
-
+  }
 export default App;
 
 
