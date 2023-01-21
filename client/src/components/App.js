@@ -6,7 +6,8 @@ import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import Profile from "./pages/Profile.js";
 import Messages from "./pages/Messages.js";
-import Calendar from "./pages/Calendar.js"
+import Calendar from "./pages/Calendar.js";
+import Forum from "./pages/Forum.js";
 
 import "../utilities.css";
 
@@ -46,7 +47,7 @@ const App = () => {
 
   return (
     <>
-      <NavBar />
+      {/* <NavBar /> */}
         <div className="App-container">
         </div>
       
@@ -57,7 +58,7 @@ const App = () => {
         <Messages path="/messages"/>
         <Calendar path="/calendar"/>
         <NotFound default />
-        
+        <Forum path="/forum" />
       </Router>
     </>
   );

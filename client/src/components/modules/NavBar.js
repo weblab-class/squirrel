@@ -4,6 +4,7 @@ import {FaCalendarAlt, FaEnvelope, FaBell} from "react-icons/fa";
 import { BsPersonCircle } from "react-icons/bs";
 import { GiSquirrel } from "react-icons/gi";
 import {Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {MdForum} from "react-icons/md"; 
 
 import "./NavBar.css";
 
@@ -25,8 +26,8 @@ const NavBar = () => {
                 <FaEnvelope/> Messages
             </Link>
 
-            <Link to="/notifications/" className="NavBar-link icons">
-                <FaBell/> Notifications
+            <Link to="/forum/" className="NavBar-link icons">
+                <MdForum/> Forum
             </Link>
 
             <Link to="/profile/" className="NavBar-link icons">

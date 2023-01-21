@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import NavBar from "../modules/NavBar.js"
 
 
 import "./Messages.css";
@@ -14,6 +15,7 @@ const Messages = (props) => {
 
     return(
         <>
+            <NavBar/>
             <div class="container">
                 <div class=".Messages-title">
                     <h1>Messages</h1>
