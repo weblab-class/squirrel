@@ -78,7 +78,7 @@ router.post("/reply", auth.ensureLoggedIn, (req, res) => {
     content: req.body.content,
   });
 
-  newPost.save().then((reply) => res.send(reply));
+  newReply.save().then((reply) => res.send(reply));
 });
 
 router.post("/group", auth.ensureLoggedIn, (req, res) => {
@@ -92,18 +92,29 @@ router.post("/group", auth.ensureLoggedIn, (req, res) => {
     img: req.body.img
   });
 
-  newPost.save().then((group) => res.send(group));
+  newGroup.save().then((group) => res.send(group));
 });
 
-router.post("/event", auth.ensureLoggedIn, (req, res) => {
+router.post("/event", (req, res) => {
   const newEvent = new Event({
-    name: req.body.name,
+    title: req.body.name,
     date: req.body.date,
     description: req.body.description,
-    group: req.body.name
+    group: req.body.group
   });
 
-  newPost.save().then((event) => res.send(event));
+  console.log("sent event?");
+
+  // newEvent.save().then((event) => res.send(event)).catch((err) => console.error(err));
+  newEvent.save((err, event) => {if (err) {console.error(err);} else {console.log(event);}})
+});
+
+router.get("/get_events", (req, res) => {
+  Event.find({"group": "global"}, "title date", (err, events) => {
+      if (err) return handleError(err);
+      console.log(events);
+      res.send(events);
+  });
 });
 
 // anything else falls to this "not found" case
