@@ -34,6 +34,7 @@ const Skeleton = ({ userId }) => {
         </div>
     </div>: (<>
     {/* ADD FORUM PAGE!! */}
+    
     </>)}
      </div>
   );

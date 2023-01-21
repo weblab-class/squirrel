@@ -6,7 +6,8 @@ import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import Profile from "./pages/Profile.js";
 import Messages from "./pages/Messages.js";
-import Button from "react-bootstrap/Button";
+import Calendar from "./pages/Calendar.js"
+
 import "../utilities.css";
 
 import { socket } from "../client-socket.js";
