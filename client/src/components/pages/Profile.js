@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "@reach/router";
+import {MdLocationOn} from "react-icons/md";
 
 import "./Profile.css";
 
@@ -25,7 +26,7 @@ const Profile = (props) => {
             </h1>
 
             <div className="Profile-location u-textCenter">
-                {user.location}
+                <MdLocationOn/> {user.location}
             </div>
 
             <div className="Profile-foodRestrictions u-textCenter">
