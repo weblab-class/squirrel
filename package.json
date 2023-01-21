@@ -19,6 +19,9 @@
     "node": ">=18.x"
   },
   "dependencies": {
+    "@fullcalendar/core": "^6.0.3",
+    "@fullcalendar/daygrid": "^6.0.3",
+    "@fullcalendar/react": "^6.0.4",
     "@reach/router": "^1.3.4",
     "@react-oauth/google": "^0.6.0",
     "connect-ensure-login": "^0.1.1",
@@ -26,6 +29,7 @@
     "dotenv": "^16.0.3",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "fullcalendar": "^6.0.3",
     "google-auth-library": "^6.1.3",
     "jwt-decode": "^3.1.2",
     "mongoose": "^5.11.9",

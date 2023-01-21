@@ -34,9 +34,11 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
           <div className="forumColumn">
             <div className="Title">Forum</div>
           </div>
-          <div className="messagesColumn">
-            <div className="eventsColumn">
-              <div className="Title">Events</div>
+          <div class="messagesColumn">
+            <div class="eventsColumn">
+              <Link to="/calendar/" className="Title">
+                  Events
+              </Link>
             </div>
             <div className="recommendationsColumn"> 
               <span className="Title">Connections</span>

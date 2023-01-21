@@ -6,6 +6,7 @@ import NotFound from "./pages/NotFound.js";
 import Skeleton from "./pages/Skeleton.js";
 import Profile from "./pages/Profile.js";
 import Messages from "./pages/Messages.js";
+import Calendar from "./pages/Calendar.js"
 
 import "../utilities.css";
 
@@ -54,6 +55,7 @@ const App = () => {
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <Profile path="/profile" /> 
         <Messages path="/messages"/>
+        <Calendar path="/calendar"/>
         <NotFound default />
         
       </Router>
