@@ -1,4 +1,3 @@
-import React from 'react'
 import FullCalendar from '@fullcalendar/react'
 import {formatDate} from '@fullcalendar/core'
 import dayGridPlugin from '@fullcalendar/daygrid'
@@ -6,6 +5,8 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from './event-utils'
 import NavBar from '../modules/NavBar.js'
+import { post } from "../../utilities";
+import React, { useState } from "react";
 
 import "./Calendar.css"
 
@@ -46,11 +47,8 @@ export default class Calendar extends React.Component {
             eventClick={this.handleEventClick}
             eventsSet={this.handleEvents} // called after events are initialized/added/changed/removed
 
-            /* you can update a remote database when these fire:
-            eventAdd={function(){}}
             eventChange={function(){}}
             eventRemove={function(){}}
-            */
           />
         </div>
 
@@ -105,6 +103,13 @@ export default class Calendar extends React.Component {
     calendarApi.unselect() // clear date selection
 
     if (title) {
+
+      console.log("added event yay");
+      const body = { name: title, date: selectInfo.startStr, description: "new event!", group: "global" };
+      post("/api/event", body).then((comment) => {
+         // props.addNewComment(comment);
+      });
+
       calendarApi.addEvent({
         id: createEventId(),
         title,
