@@ -4,6 +4,8 @@ import {FaCalendarAlt, FaEnvelope, FaBell} from "react-icons/fa";
 import { BsPersonCircle } from "react-icons/bs";
 import { GiSquirrel } from "react-icons/gi";
 import {Nav, Navbar, NavDropdown} from "react-bootstrap";
+import {MdForum} from "react-icons/md"; 
+
 import "./NavBar.css";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 
@@ -18,7 +20,7 @@ const NavBar = ({userId, handleLogin, handleLogout}) => {
             </Link>
         </div>
 
-        <div className="NavBar-linkContainer u-inlineBlock right-align">
+        <span className="NavBar-linkContainer right-align">
             <Link to="/calendar/" className="NavBar-link icons">
                 <FaCalendarAlt/> Calendar
             </Link>
@@ -27,8 +29,8 @@ const NavBar = ({userId, handleLogin, handleLogout}) => {
                 <FaEnvelope/> Messages
             </Link>
 
-            <Link to="/notifications/" className="NavBar-link icons">
-                <FaBell/> Notifications
+            <Link to="/forum/" className="NavBar-link icons">
+                <MdForum/> Forum
             </Link>
 
             {userId ? (
@@ -56,7 +58,7 @@ const NavBar = ({userId, handleLogin, handleLogout}) => {
             </GoogleOAuthProvider>
             )}
             
-        </div>
+        </span>
 
         
     </nav>

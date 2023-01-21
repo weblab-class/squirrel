@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "@reach/router";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 
+import NavBar from "../modules/NavBar.js";
 import "../../utilities.css";
 import "./Skeleton.css";
 import "./pages.css";
@@ -14,6 +15,7 @@ const Skeleton = ({ userId }) => {
     
     //<div className="center block">
      <div>
+      
       {userId ?  <div className="HomeContainer">
         <div className="messagesColumn">
           {/* <div class="Title">Messages</div> */}

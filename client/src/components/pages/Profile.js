@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from "react";
 import { Link } from "@reach/router";
 import {MdLocationOn} from "react-icons/md";
+import NavBar from "../modules/NavBar.js";
 
 import "./Profile.css";
 
@@ -15,8 +16,9 @@ const Profile = (props) => {
     if(!user){
         return(<div> Please sign in first! :D </div>)
     }
-    return(
+    else{return(
         <div>
+            <NavBar/>
             <div className="Profile-avatarContainer">
                 <div className="Profile-avatar" />
             </div>
@@ -47,7 +49,8 @@ const Profile = (props) => {
             </div>
             
         </div>
-    )
+    )}
+
 }
 
 export default Profile;

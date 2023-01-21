@@ -1,0 +1,16 @@
+.Forum-container {
+    height: calc(100vh - 120px);
+    /* width: 100%; */
+    padding: 0 15px;
+  }
+  
+  .Forum-userList {
+    flex: 0 0 220px;
+    margin-right: var(--l);
+  }
+  
+  .Forum-chatContainer {
+    flex-grow: 1;
+    overflow-x: hidden;
+  }
+  
