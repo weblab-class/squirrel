@@ -13,7 +13,7 @@ const Profile = (props) => {
       }, []);
     
     if(!user){
-        return(<div> Loading! Feel free to grab a coffee as you wait uwu </div>)
+        return(<div> Please sign in first! :D </div>)
     }
     return(
         <div>

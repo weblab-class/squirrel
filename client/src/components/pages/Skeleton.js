@@ -11,7 +11,7 @@ const GOOGLE_CLIENT_ID = "48664241058-q3dvrh1u5u8276n9h8iio1evghqf88ob.apps.goog
 
 const Skeleton = ({ userId }) => {
   return (
-
+    
     //<div className="center block">
      <div>
       {userId ?  <div className="HomeContainer">
