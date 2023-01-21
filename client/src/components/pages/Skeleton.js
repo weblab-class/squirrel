@@ -12,11 +12,7 @@ const GOOGLE_CLIENT_ID = "48664241058-q3dvrh1u5u8276n9h8iio1evghqf88ob.apps.goog
 
 const Skeleton = ({ userId}) => {
   return (
-    //<div className="center block">
      <div className="bigContainer">
-      {/* <NavBar/> */}
-      {/* <NavBar userId ={userId} handleLogin={handleLogin} handleLogout={handleLogout}/> */}
-      {/* <NavBar userId ={userId} handleLogin={handleLogin} handleLogout={handleLogout}/> */}
       {userId ?  <div className="HomeContainer">
         <div className="messagesColumn">
           <Link to="/messages/" className="Title">
@@ -35,9 +31,6 @@ const Skeleton = ({ userId}) => {
           </div>
         </div>
     </div>: (<>
-    {/* ADD FORUM PAGE!! */}
-    {/* <NavBar/> */}
-    {/* <NavBar userId ={userId} handleLogin={handleLogin} handleLogout={handleLogout}/> */}
     <div className="forumColumn">
           <div className="Title">Forum</div>
         </div>
