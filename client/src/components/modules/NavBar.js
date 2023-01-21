@@ -17,7 +17,7 @@ const NavBar = ({userId, handleLogin, handleLogout}) => {
                 <GiSquirrel/> TBD Logo
             </Link>
         </div>
-        
+
         <div className="NavBar-linkContainer">
             <Link to="/calendar/" className="NavBar-link icons">
                 <FaCalendarAlt/> Calendar
@@ -64,38 +64,3 @@ const NavBar = ({userId, handleLogin, handleLogout}) => {
 };
 
 export default NavBar;
-
-
-// const NavBar = () => {
-//   return (
-//     <nav className="NavBar-container">
-//         <div className="NavBar-title u-inlineBlock">
-//             <Link to ="/" className="NavBar-link">
-//                 <GiSquirrel/> TBD Logo
-//             </Link>
-//         </div>
-
-//         <Navbar.Collapse className="NavBar-linkContainer">
-//             <Link to="/calendar/" className="NavBar-link icons">
-//                 <FaCalendarAlt/> Calendar
-//             </Link>
-
-//             <Link to="/messages/" className="NavBar-link icons">
-//                 <FaEnvelope/> Messages
-//             </Link>
-
-//             <Link to="/forum/" className="NavBar-link icons">
-//                 <MdForum/> Forum
-//             </Link>
-
-//             <Link to="/profile/" className="NavBar-link icons">
-//                 <BsPersonCircle /> Profile
-//             </Link>
-//         </Navbar.Collapse>
-
-        
-//     </nav>
-//   );
-// };
-
-// export default NavBar;
