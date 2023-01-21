@@ -1,10 +1,13 @@
 const mongoose = require("mongoose");
 
 const EventSchema = new mongoose.Schema({
-    name: String,
+    title: String,
     date: Date,
     description: String,
-    group: String
+    group: String,
+    start: String,
+    end: String,
+    allDay: Boolean
 });
 
 

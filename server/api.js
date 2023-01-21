@@ -77,8 +77,7 @@ router.post("/reply", auth.ensureLoggedIn, (req, res) => {
     parent: req.user.parent,
     content: req.body.content,
   });
-
-  newPost.save().then((reply) => res.send(reply));
+  newReply.save().then((reply) => res.send(reply));
 });
 
 router.post("/group", auth.ensureLoggedIn, (req, res) => {
@@ -91,19 +90,35 @@ router.post("/group", auth.ensureLoggedIn, (req, res) => {
     description: req.body.description,
     img: req.body.img
   });
-
-  newPost.save().then((group) => res.send(group));
+  newGroup.save().then((group) => res.send(group));
 });
 
-router.post("/event", auth.ensureLoggedIn, (req, res) => {
+router.post("/event", (req, res) => {
   const newEvent = new Event({
-    name: req.body.name,
-    date: req.body.date,
+    title: req.body.name,
+    start: req.body.start,
+    end: req.body.end,
     description: req.body.description,
-    group: req.body.name
+    group: req.body.group,
+    allDay: req.body.allDay
   });
 
-  newPost.save().then((event) => res.send(event));
+  console.log("sent event?");
+
+  // newEvent.save().then((event) => res.send(event)).catch((err) => console.error(err));
+  newEvent.save((err, event) => {if (err) {console.error(err);} else {console.log(event);}})
+});
+
+router.get("/get_events", (req, res) => {
+  Event.find({"group": "global"}, "title start end allDay date", (err, events) => {
+      if (err) return handleError(err);
+      console.log(events);
+      res.send(events);
+  });
+});
+
+router.post("/del_event", (req, res) => {
+  Event.findOneAndDelete({title: req.body.title, start: req.body.start, end: req.body.end}, (err) => {if (err) console.error(err);})
 });
 
 // anything else falls to this "not found" case
