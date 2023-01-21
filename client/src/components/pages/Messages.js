@@ -15,7 +15,8 @@ const Messages = (props) => {
 
     return(
         <>
-            <NavBar/>
+            {/* <NavBar/> */}
+            {/* <NavBar userId ={userId} handleLogin={handleLogin} handleLogout={handleLogout}/> */}
             <div class="container">
                 <div class=".Messages-title">
                     <h1>Messages</h1>
@@ -25,7 +26,6 @@ const Messages = (props) => {
                 <div class="lines">
                     <div class="diamond"></div>
                 </div>
-
 
             </div>
         </>
