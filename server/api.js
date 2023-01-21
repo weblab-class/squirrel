@@ -11,6 +11,10 @@ const express = require("express");
 
 // import models so we can interact with the database
 const User = require("./models/user");
+const Reply = require("./models/reply");
+const Post = require("./models/post");
+const Group = require("./models/group");
+const Event = require("./models/event");
 
 // import authentication library
 const auth = require("./auth");
@@ -57,8 +61,15 @@ TODO ... eventually
 Leave Group
 */
 
-router.get("/")
+router.post("/story", auth.ensureLoggedIn, (req, res) => {
+  const newStory = new Story({
+    creator_id: req.user._id,
+    creator_name: req.user.name,
+    content: req.body.content,
+  });
 
+  newStory.save().then((story) => res.send(story));
+});
 
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
