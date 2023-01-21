@@ -22,7 +22,11 @@ export default class Calendar extends React.Component {
   render() {
     return (
     <div>
+<<<<<<< HEAD
         {/*<NavBar/>*/}
+=======
+        {/* <NavBar/> */}
+>>>>>>> 9ceba4eeea92a331a57cd3547f4f76cd3088ef0b
       <div className='demo-app'>
         {this.renderSidebar()}
         <br/>
@@ -66,9 +70,9 @@ export default class Calendar extends React.Component {
         <div className='demo-app-sidebar-section'>
           <h2>Instructions</h2>
           <ul>
-            <li>Select dates and you will be prompted to create a new event</li>
-            <li>Drag, drop, and resize events</li>
-            <li>Click an event to delete it</li>
+            <li>Select dates and you will be prompted to create a new event.</li>
+            <li>Drag, drop, and resize events.</li>
+            <li>Click an event to delete it.</li>
             <li>Aren't you glad this isn't Google Calendar?</li>
           </ul>
         </div>

@@ -8,6 +8,7 @@
   justify-content: space-between;
 }
 
+<<<<<<< HEAD
 .NavBar-title {
   color: var(--white);
   font-size: 21px;
@@ -39,3 +40,31 @@
   opacity: 0.8;
   scale: 105%;
 }
+=======
+  .NavBar-linkContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height:36px;
+    width: fit-content; 
+  }
+
+  .NavBar-link{
+    flex-shrink: 0;
+    margin: 10px;
+  }
+  
+  .NavBar-link,
+  .NavBar-link:visited {
+    color: var(--white);
+    opacity: 0.6;
+    text-decoration: none;
+  }
+
+
+  .NavBar-link:hover {
+    opacity: 0.8;
+    scale: 105%;
+  }
+>>>>>>> 9ceba4eeea92a331a57cd3547f4f76cd3088ef0b

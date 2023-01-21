@@ -14,11 +14,20 @@ const Profile = (props) => {
       }, []);
     
     if(!user){
+<<<<<<< HEAD
         return(<div> Please sign in first! :D </div>)
     }
     else{return(
         <div>
             <NavBar/>
+=======
+        return(<div className="Loading">
+            <br/>
+        Loading! Feel free to grab a coffee as you wait! </div>)
+    }
+    return(
+        <div className="bigContainer">
+>>>>>>> 9ceba4eeea92a331a57cd3547f4f76cd3088ef0b
             <div className="Profile-avatarContainer">
                 <div className="Profile-avatar" />
             </div>
