@@ -7,7 +7,7 @@ import "./Skeleton.css";
 import "./pages.css";
 
 //TODO: REPLACE WITH YOUR OWN CLIENT_ID
-const GOOGLE_CLIENT_ID = "FILL ME IN";
+const GOOGLE_CLIENT_ID = "48664241058-q3dvrh1u5u8276n9h8iio1evghqf88ob.apps.googleusercontent.com";
 
 const Skeleton = ({ userId, handleLogin, handleLogout }) => {
   return (
@@ -24,14 +24,15 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
       ) : (
         <GoogleLogin onSuccess={handleLogin} onError={(err) => console.log(err)} />
       )}   
-      <div class="HomeContainer">
-          <div class="messagesColumn">
+      <div className="HomeContainer">
+          <div className="messagesColumn">
+            {/* <div class="Title">Messages</div> */}
             <Link to="/messages/" className="Title">
                 Messages
             </Link>
           </div>
-          <div class="forumColumn">
-            <div class="Title">Forum</div>
+          <div className="forumColumn">
+            <div className="Title">Forum</div>
           </div>
           <div class="messagesColumn">
             <div class="eventsColumn">
@@ -39,8 +40,8 @@ const Skeleton = ({ userId, handleLogin, handleLogout }) => {
                   Events
               </Link>
             </div>
-            <div class="recommendationsColumn"> 
-              <div class="Title">Connections</div>
+            <div className="recommendationsColumn"> 
+              <span className="Title">Connections</span>
             </div>
           </div>
       </div>
