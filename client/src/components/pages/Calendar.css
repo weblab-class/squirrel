@@ -27,7 +27,10 @@ b { /* used for event dates/times */
 
 .demo-app {
   display: flex;
+  position: absolute;
+  top: 46px;
   min-height: 100%;
+  width: 100vw;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;
   /* padding-left: 20px; */

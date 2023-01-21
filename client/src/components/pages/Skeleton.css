@@ -9,6 +9,13 @@
     --brown: #2F1710;
 }
 
+.bigContainer{
+  position: absolute;
+  top: 46px;
+  min-height: 100%;
+  width: 100vw;
+}
+
 .messagesColumn {
   text-align: center;
   width: 75%;
@@ -18,11 +25,6 @@
   padding-right: 20px;
   /* text-decoration: none; */
 }
-
-/* .messagesColumn:visited{
-  color: black;
-  text-decoration: none;
-} */
 
 .forumColumn {
   text-align: center;
@@ -78,9 +80,3 @@
   text-decoration: none;
   color: black;
 }
-
-.Title:hover{
-  font-weight: 900;
-}
-/* .Title:visited{
-} */

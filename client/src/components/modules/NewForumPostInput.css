@@ -1,11 +1,3 @@
-.NewForumPostInput-container{
-    /* display: flex;
-    align-items: left;
-    justify-content: space-between; */
-    /* margin-right: auto;
-    margin-left: auto; */
-}
-
 .NewPostInput-input,
 .NewPostInput-button {
   font-family: "Arial";

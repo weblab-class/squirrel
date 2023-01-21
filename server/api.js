@@ -77,7 +77,6 @@ router.post("/reply", auth.ensureLoggedIn, (req, res) => {
     parent: req.user.parent,
     content: req.body.content,
   });
-
   newReply.save().then((reply) => res.send(reply));
 });
 
@@ -91,7 +90,6 @@ router.post("/group", auth.ensureLoggedIn, (req, res) => {
     description: req.body.description,
     img: req.body.img
   });
-
   newGroup.save().then((group) => res.send(group));
 });
 

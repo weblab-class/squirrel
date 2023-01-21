@@ -13,14 +13,18 @@
     font-size: 21px;
   }
 
-  /* .NavBar-linkContainer { */
-    /* margin-left: var(--l); */
-    /* margin-left: auto; */
-    /* margin-right: 0; */
-  /* } */
   .NavBar-linkContainer {
-    display: block;
-    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height:36px;
+    width: fit-content; 
+  }
+
+  .NavBar-link{
+    flex-shrink: 0;
+    margin: 10px;
   }
   
   .NavBar-link,
@@ -29,23 +33,9 @@
     opacity: 0.6;
     text-decoration: none;
   }
-  
+
+
   .NavBar-link:hover {
     opacity: 0.8;
-    font-size: 21px;
+    scale: 105%;
   }
-  
-  .NavBar-link + .NavBar-link {
-    margin-left: var(--m);
-  }
-  
-  /* .right-align{
-    justify-content: flex-end;
-  }
-
-  .icons{
-    margin-left: auto;
-    margin-right: 0;
-    justify-content: flex-end;
-    text-align: right
-} */
