@@ -98,9 +98,11 @@ router.post("/group", auth.ensureLoggedIn, (req, res) => {
 router.post("/event", (req, res) => {
   const newEvent = new Event({
     title: req.body.name,
-    date: req.body.date,
+    start: req.body.start,
+    end: req.body.end,
     description: req.body.description,
-    group: req.body.group
+    group: req.body.group,
+    allDay: req.body.allDay
   });
 
   console.log("sent event?");
@@ -110,7 +112,7 @@ router.post("/event", (req, res) => {
 });
 
 router.get("/get_events", (req, res) => {
-  Event.find({"group": "global"}, "title date", (err, events) => {
+  Event.find({"group": "global"}, "title start end allDay date", (err, events) => {
       if (err) return handleError(err);
       console.log(events);
       res.send(events);

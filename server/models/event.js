@@ -4,7 +4,10 @@ const EventSchema = new mongoose.Schema({
     title: String,
     date: Date,
     description: String,
-    group: String
+    group: String,
+    start: String,
+    end: String,
+    allDay: Boolean
 });
 
 
