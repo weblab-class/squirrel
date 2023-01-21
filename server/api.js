@@ -61,14 +61,49 @@ TODO ... eventually
 Leave Group
 */
 
-router.post("/story", auth.ensureLoggedIn, (req, res) => {
-  const newStory = new Story({
-    creator_id: req.user._id,
-    creator_name: req.user.name,
+router.post("/post", auth.ensureLoggedIn, (req, res) => {
+  const newPost = new Post({
+    username: req.user.username,
+    group: req.body.group,
     content: req.body.content,
   });
 
-  newStory.save().then((story) => res.send(story));
+  newPost.save().then((post) => res.send(post));
+});
+
+router.post("/reply", auth.ensureLoggedIn, (req, res) => {
+  const newReply = new Reply({
+    username: req.user.username,
+    parent: req.user.parent,
+    content: req.body.content,
+  });
+
+  newPost.save().then((reply) => res.send(reply));
+});
+
+router.post("/group", auth.ensureLoggedIn, (req, res) => {
+  const newGroup = new Group({
+    name: req.body.name,
+    users: [req.user.name],
+    restrictions: req.body.restrictions,
+    allergies: req.body.allergies,
+    location: req.body.location,
+    description: req.body.description,
+    img: req.body.img
+  });
+
+  newPost.save().then((group) => res.send(group));
+});
+
+router.post("/event", auth.ensureLoggedIn, (req, res) => {
+  const newEvent = new Event({
+    name: req.body.name,
+    date: req.body.date,
+    description: req.body.description,
+    group: req.body.name
+  });
+
+  newPost.save().then((event) => res.send(event));
 });
 
 // anything else falls to this "not found" case
