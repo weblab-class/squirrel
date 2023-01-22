@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import NavBar from "../modules/NavBar.js"
-
+import { post, get } from "../../utilities";
 
 import "./Messages.css";
 
 const Messages = (props) => {
     const [stories, setStories] = useState([]);
 
-    // useEffect(() => {
-    //   document.title = "Message Page";
-    //   get("/api/messages").then((messageObjs) => {
-    //   });
-    // }, []);
+    /* useEffect(() => {
+      document.title = "Message Page";
+      get("/api/messages").then((messageObjs) => {});
+    }, []); */
 
     return(
         <>
