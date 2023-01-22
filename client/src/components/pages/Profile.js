@@ -14,34 +14,33 @@ const Profile = (props) => {
         //get(`/api/user`, { userid: props.userId }).then((userObj) => setUser(userObj));
     }, []);
 
-    return (
-        get("/api/whoami").then((user) => {
-            if(!user) {(<div className= "Loading">
+    if(!props.userId) {
+        return (<div className= "Loading">
             <br/>
-            Loading! Feel free to grab a coffee as you wait! </div>)}
-            else{
-                <div>
-                    <div className="bigContainer">
-                    <div className="Profile-avatarContainer">
-                        <div className="Profile-avatar" />
-                    </div>
+            Loading! Feel free to grab a coffee as you wait! </div>
+        )
+    }
+    return (
+        <div>
+            <div className="bigContainer">
+            <div className="Profile-avatarContainer">
+                <div className="Profile-avatar" />
+            </div>
 
-                    <h1 className="Profile-name u-textLeft">
-                        {user.name}
-                    </h1>
+            <h1 className="Profile-name u-textLeft">
+                {user.name}
+            </h1>
 
-                    <div className="Profile-location u-textCenter">
-                        <MdLocationOn/> {user.location}
-                    </div>
+            <div className="Profile-location u-textCenter">
+                <MdLocationOn/> {user.location}
+            </div>
 
-                    <div className="Profile-foodRestrictions u-textCenter">
-                        Food Restrictions: {user.preferences.restrictions}
-                        </div>
-                    </div>
+            <div className="Profile-foodRestrictions u-textCenter">
+                Food Restrictions: {user.preferences.restrictions}
                 </div>
-                
-            }
-        })
+            </div>
+        </div>
+        
     )
 }
 
