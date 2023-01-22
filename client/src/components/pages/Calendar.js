@@ -1,4 +1,3 @@
-import React from 'react'
 import FullCalendar from '@fullcalendar/react'
 import {formatDate} from '@fullcalendar/core'
 import dayGridPlugin from '@fullcalendar/daygrid'
@@ -6,6 +5,8 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from './event-utils'
 import NavBar from '../modules/NavBar.js'
+import { post, get } from "../../utilities";
+import React, { useState } from "react";
 
 import "./Calendar.css"
 
@@ -49,12 +50,9 @@ export default class Calendar extends React.Component {
             eventContent={renderEventContent} // custom render function
             eventClick={this.handleEventClick}
             eventsSet={this.handleEvents} // called after events are initialized/added/changed/removed
-
-            /* you can update a remote database when these fire:
-            eventAdd={function(){}}
+            events="/api/get_events"
             eventChange={function(){}}
             eventRemove={function(){}}
-            */
           />
         </div>
 
@@ -109,6 +107,13 @@ export default class Calendar extends React.Component {
     calendarApi.unselect() // clear date selection
 
     if (title) {
+
+      console.log("added event yay");
+      const body = { name: title, start: selectInfo.startStr, end: selectInfo.endStr, allDay: selectInfo.allDay, description: "new event!", group: "global" };
+      post("/api/event", body).then((comment) => {
+         // props.addNewComment(comment);
+      });
+
       calendarApi.addEvent({
         id: createEventId(),
         title,
@@ -118,10 +123,11 @@ export default class Calendar extends React.Component {
       })
     }
   }
-
+  
   handleEventClick = (clickInfo) => {
     if (confirm(`Are you sure you want to delete the event? '${clickInfo.event.title}'`)) {
       clickInfo.event.remove()
+      post("/api/del_event", clickInfo.event).then((res) => console.log(res))
     }
   }
 
