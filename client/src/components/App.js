@@ -54,8 +54,8 @@ const App = () => {
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <Profile path="/profile" /> 
-        <Messages path="/messages"/>
-        <Calendar path="/calendar"/>
+        <Messages path="/messages" />
+        <Calendar path="/calendar" /> 
         <NotFound default />
         <Forum path="/forum" />
       </Router>

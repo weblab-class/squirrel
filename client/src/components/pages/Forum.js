@@ -101,6 +101,10 @@ const Forum = (props) => {
     }
   };
 
+  if (!props.userId) {
+     return <div>Log in before using Forum</div>;
+  }
+
   return (
     <>
       <div className="u-relative Forum-container">
