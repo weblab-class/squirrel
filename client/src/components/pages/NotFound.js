@@ -31,12 +31,6 @@ const NotFound = () => {
       <br/>
       <br/>
       <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
-      <br/>
       <p>Wait....</p>
       <br/>
       <br/>
@@ -57,9 +51,28 @@ const NotFound = () => {
       <br/>
       <br/>
       <p>Why is NavBar still here?</p>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <a href="https://tinyurl.com/blepppppppp" className="rick-roll">
-        Ah found the solution here but this is a 404 page, so having this broken is in character
+        It seems stack overflow comes in clutch again as seen here, but since this is a 404 page, so having this broken is in character
       </a>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
+      <br/>
     </div>
   );
 };

@@ -5,7 +5,6 @@ import { socket } from "../../client-socket.js";
 import { get } from "../../utilities";
 
 import "./Forum.css";
-import NavBar from "../modules/NavBar.js";
 
 const ALL_CHAT = {
   _id: "ALL_CHAT",

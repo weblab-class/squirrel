@@ -8,6 +8,7 @@ import Profile from "./pages/Profile.js";
 import Messages from "./pages/Messages.js";
 import Calendar from "./pages/Calendar.js";
 import Forum from "./pages/Forum.js";
+import FindGroup from "./pages/FindGroup.js";
 
 import "../utilities.css";
 
@@ -58,6 +59,7 @@ const App = () => {
         <Calendar path="/calendar" userId={userId}/> 
         <NotFound default />
         <Forum path="/forum" userId={userId}/>
+        <FindGroup path="/findgroup"/>
       </Router>
     </>
   );
