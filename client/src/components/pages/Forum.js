@@ -71,18 +71,10 @@ const Forum = (props) => {
 
   useEffect(() => {
     const addMessages = (data) => {
-      if (
-        (data.recipient._id === activeChat.recipient._id &&
-          data.sender._id === props.userId) ||
-        (data.sender._id === activeChat.recipient._id &&
-          data.recipient._id === props.userId) ||
-        (data.recipient._id === "ALL_CHAT" && activeChat.recipient._id === "ALL_CHAT")
-      ) {
         setActiveChat(prevActiveChat => ({
           recipient: prevActiveChat.recipient,
           messages: prevActiveChat.messages.concat(data),
         }));
-      }
     };
     socket.on("message", addMessages);
     return () => {
@@ -109,9 +101,6 @@ const Forum = (props) => {
     }
   };
 
-  if (!props.userId) {
-    return <div>Log in before using Forum</div>;
-  }
   return (
     <>
       <div className="u-relative Forum-container">
