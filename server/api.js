@@ -36,7 +36,7 @@ router.get("/whoami", (req, res) => {
     // not logged in
     return res.send({});
   }
-
+  console.log(req.user);
   res.send(req.user);
 });
 
