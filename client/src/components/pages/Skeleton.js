@@ -29,7 +29,9 @@ const Skeleton = ({ userId}) => {
                 Events
             </Link>
           <div className="recommendationsColumn"> 
-            <span className="Title">Connections</span>
+            <Link to="/findgroup/" className="Title">
+                  Recommendations
+            </Link>
           </div>
         </div>
     </div>: (<>
