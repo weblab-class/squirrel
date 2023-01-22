@@ -53,11 +53,11 @@ const App = () => {
 
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-        <Profile path="/profile" /> 
-        <Messages path="/messages" />
-        <Calendar path="/calendar" /> 
+        <Profile path="/profile" userId={userId}/> 
+        <Messages path="/messages" userId={userId}/>
+        <Calendar path="/calendar" userId={userId}/> 
         <NotFound default />
-        <Forum path="/forum" />
+        <Forum path="/forum" userId={userId}/>
       </Router>
     </>
   );
