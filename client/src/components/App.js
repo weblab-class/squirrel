@@ -8,6 +8,7 @@ import Profile from "./pages/Profile.js";
 import Messages from "./pages/Messages.js";
 import Calendar from "./pages/Calendar.js";
 import Forum from "./pages/Forum.js";
+import FindGroup from "./pages/FindGroup.js";
 
 import "../utilities.css";
 
@@ -54,12 +55,12 @@ const App = () => {
 
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-        <Profile path="/profile"/> 
-        {/* <Profile path="/profile/:userId"/>  */}
-        <Messages path="/messages"/>
-        <Calendar path="/calendar"/>
+        <Profile path="/profile" userId={userId}/> 
+        <Messages path="/messages" userId={userId}/>
+        <Calendar path="/calendar" userId={userId}/> 
         <NotFound default />
-        <Forum path="/forum" />
+        <Forum path="/forum" userId={userId}/>
+        <FindGroup path="/findgroup"/>
       </Router>
     </>
   );

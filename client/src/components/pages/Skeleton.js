@@ -20,14 +20,18 @@ const Skeleton = ({ userId}) => {
           </Link>
         </div>
         <div className="forumColumn">
-          <div className="Title">Forum</div>
+          <Link to="/forum/" className="Title">
+                Forum
+            </Link>
         </div>
-        <div className="messagesColumn">
-          <div className="eventsColumn">
-            <div className="Title">Events</div>
-          </div>
+        <div className="eventsColumn">
+          <Link to="/calendar/" className="Title">
+                Events
+            </Link>
           <div className="recommendationsColumn"> 
-            <span className="Title">Connections</span>
+            <Link to="/findgroup/" className="Title">
+                  Recommendations
+            </Link>
           </div>
         </div>
     </div>: (<>

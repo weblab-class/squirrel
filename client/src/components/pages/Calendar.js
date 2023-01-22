@@ -105,7 +105,7 @@ export default class Calendar extends React.Component {
     if (title) {
 
       console.log("added event yay");
-      const body = { name: title, start: selectInfo.startStr, end: selectInfo.endStr, allDay: selectInfo.allDay, description: "new event!", group: "global" };
+      const body = { name: title, start: selectInfo.startStr, end: selectInfo.endStr, allDay: selectInfo.allDay, description: "new event!", group: "no group" };
       post("/api/event", body).then((comment) => {
          // props.addNewComment(comment);
       });

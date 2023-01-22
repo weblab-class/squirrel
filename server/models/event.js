@@ -7,7 +7,8 @@ const EventSchema = new mongoose.Schema({
     group: String,
     start: String,
     end: String,
-    allDay: Boolean
+    allDay: Boolean,
+    users: [String]
 });
 
 
