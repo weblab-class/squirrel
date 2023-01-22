@@ -25,6 +25,10 @@ const router = express.Router();
 //initialize socket
 const socketManager = require("./server-socket");
 
+router.get("/activeUsers", (req, res) => {
+  res.send({ activeUsers: socketManager.getAllConnectedUsers() });
+});
+
 router.post("/login", auth.login);
 router.post("/logout", auth.logout);
 router.get("/whoami", (req, res) => {
@@ -94,13 +98,15 @@ router.post("/group", auth.ensureLoggedIn, (req, res) => {
 });
 
 router.post("/event", (req, res) => {
+  console.log(req.user);
   const newEvent = new Event({
     title: req.body.name,
     start: req.body.start,
     end: req.body.end,
     description: req.body.description,
     group: req.body.group,
-    allDay: req.body.allDay
+    allDay: req.body.allDay,
+    users: [req.user.googleid]
   });
 
   console.log("sent event?");
@@ -110,11 +116,19 @@ router.post("/event", (req, res) => {
 });
 
 router.get("/get_events", (req, res) => {
-  Event.find({"group": "global"}, "title start end allDay date", (err, events) => {
+  if (req.user) {
+    Event.find({ $or: [{"group": "global"}, {"users": req.user.googleid}]}, "title start end allDay date", (err, events) => {
       if (err) return handleError(err);
       console.log(events);
       res.send(events);
-  });
+    });
+  } else {
+    Event.find({"group": "global"}, "title start end allDay date", (err, events) => {
+      if (err) return handleError(err);
+      console.log(events);
+      res.send(events);
+    });
+  }
 });
 
 router.post("/del_event", (req, res) => {
