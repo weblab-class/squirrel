@@ -23,11 +23,7 @@ export default class Calendar extends React.Component {
   render() {
     return (
     <div>
-<<<<<<< HEAD
-        {/*<NavBar/>*/}
-=======
         {/* <NavBar/> */}
->>>>>>> 9ceba4eeea92a331a57cd3547f4f76cd3088ef0b
       <div className='demo-app'>
         {this.renderSidebar()}
         <br/>

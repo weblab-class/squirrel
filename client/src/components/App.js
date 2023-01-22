@@ -27,7 +27,6 @@ const App = () => {
       if (user._id) {
         // they are registed in the database, and currently logged in.
         setUserId(user._id);
-        setLoggedIn(true);
       }
     });
   }, []);
@@ -55,7 +54,8 @@ const App = () => {
 
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-        <Profile path="/profile" /> 
+        <Profile path="/profile"/> 
+        {/* <Profile path="/profile/:userId"/>  */}
         <Messages path="/messages"/>
         <Calendar path="/calendar"/>
         <NotFound default />

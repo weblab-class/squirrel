@@ -10,23 +10,11 @@ import "./pages.css";
 //TODO: REPLACE WITH YOUR OWN CLIENT_ID
 const GOOGLE_CLIENT_ID = "48664241058-q3dvrh1u5u8276n9h8iio1evghqf88ob.apps.googleusercontent.com";
 
-<<<<<<< HEAD
-const Skeleton = ({ userId }) => {
-  return (
-    
-    //<div className="center block">
-     <div>
-      
-      {userId ?  <div className="HomeContainer">
-        <div className="messagesColumn">
-          {/* <div class="Title">Messages</div> */}
-=======
 const Skeleton = ({ userId}) => {
   return (
      <div className="bigContainer">
       {userId ?  <div className="HomeContainer">
         <div className="messagesColumn">
->>>>>>> 9ceba4eeea92a331a57cd3547f4f76cd3088ef0b
           <Link to="/messages/" className="Title">
               Messages
           </Link>
@@ -43,14 +31,9 @@ const Skeleton = ({ userId}) => {
           </div>
         </div>
     </div>: (<>
-<<<<<<< HEAD
-    {/* ADD FORUM PAGE!! */}
-    
-=======
     <div className="forumColumn">
           <div className="Title">Forum</div>
         </div>
->>>>>>> 9ceba4eeea92a331a57cd3547f4f76cd3088ef0b
     </>)}
      </div>
   );

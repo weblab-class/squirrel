@@ -86,36 +86,3 @@
   text-decoration: none;
   color: black;
 }
-<<<<<<< HEAD
-
-.Title:hover{
-  font-weight: 900;
-}
-/* .Title:visited{
-} */
-
-.center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-.middle {
-  margin: 0;
-  position: absolute;
-  left: 12%;
-}
-.block {
-  display: block;
-  width: 100%;
-  border: none;
-  background-color: #04AA6D;
-  padding: 14px 28px;
-  font-size: 16px;
-  cursor: pointer;
-  text-align: center;
-}
-=======
->>>>>>> 9ceba4eeea92a331a57cd3547f4f76cd3088ef0b
