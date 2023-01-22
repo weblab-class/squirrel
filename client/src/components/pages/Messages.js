@@ -16,9 +16,8 @@ const Messages = (props) => {
     return(
         <>
             <div class="container">
-                <div class=".Messages-title">
-                    <h1>Messages</h1>
-                    <h2>Groups</h2>
+                <div class="Messages-title">
+                    <h1>Group Messages</h1>
                 </div>
 
                 <div class="lines">
