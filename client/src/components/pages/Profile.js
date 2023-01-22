@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Link } from "@reach/router";
 import {MdLocationOn} from "react-icons/md";
 import NavBar from "../modules/NavBar.js";
+import { get } from "../../utilities";
 
 import "./Profile.css";
 
@@ -10,10 +11,10 @@ const Profile = (props) => {
     
     useEffect(() => {
         document.title = "Profile Page";
-        // get(`/api/user`, { userid: props.userId }).then((userObj) => setUser(userObj));
+        get(`/api/whoami`, { userid: props.userId }).then((userObj) => setUser(userObj));
       }, []);
     
-    if(!user){
+    if(!props.userId){
         return(<div className="Loading">
             <br/>
         Loading! Feel free to grab a coffee as you wait! </div>)
@@ -29,19 +30,19 @@ const Profile = (props) => {
             </h1>
 
             <div className="Profile-location u-textCenter">
-                <MdLocationOn/> {user.location}
+                <MdLocationOn/> {user.location ? user.location : "No location"}
             </div>
 
             <div className="Profile-foodRestrictions u-textCenter">
-                Food Restrictions: {user.preferences.restrictions}
+                Food Restrictions: {user.preferences?.restrictions ? user.preferences.restrictions : "No restrictions"}
             </div>
 
             <div className="Profile-Allergies u-textCenter">
-                Allergies: {user.preferences.allergies}
+                Allergies: {user.preferences?.allergies ? user.preferences.allergies : "No allergies"}
             </div>
 
             <div className="Cooking Preferences u-textCenter">
-                Cooking Preferences: {user.preferences.time}
+                Cooking Preferences: {user.preferences?.time ? user.preferences.time : "No time preferences"}
             </div>
             <div class="container">
                 <div class="lines">
