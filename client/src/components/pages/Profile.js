@@ -46,9 +46,9 @@ const Profile = (props) => {
                 <div className="Cooking Preferences u-textCenter">
                     Cooking Preferences: {user.preferences?.time ? user.preferences.time : "No time preferences"}
                 </div>
-                <div class="container">
-                    <div class="lines">
-                        <div class="diamond"></div>
+                <div className="container">
+                    <div className="lines">
+                        <div className="diamond"></div>
                     </div>
                 </div>
             </div>
