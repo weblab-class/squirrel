@@ -131,6 +131,13 @@ router.get("/get_events", (req, res) => {
   }
 });
 
+router.get("/get_groups", (req, res) => {
+  Group.find({}, "title link", (err, groups) => {
+    if (err) return handleError(err);
+    res.send(groups);
+  });
+});
+
 router.post("/del_event", (req, res) => {
   Event.findOneAndDelete({title: req.body.title, start: req.body.start, end: req.body.end}, (err) => {if (err) console.error(err);})
 });

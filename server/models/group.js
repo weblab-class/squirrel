@@ -8,6 +8,8 @@ const GroupSchema = new mongoose.Schema({
     location: String,
     img: String,
     description: String,
+    title: String,
+    link: String
 });
 
 
