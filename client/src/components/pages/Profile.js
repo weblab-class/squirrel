@@ -13,6 +13,10 @@ const Profile = (props) => {
         document.title = "Profile Page";
         get(`/api/whoami`, { userid: props.userId }).then((userObj) => setUser(userObj));
       }, []);
+
+    const handleButton = (event) => {
+        
+    }
     
     if(!props.userId){
         return(

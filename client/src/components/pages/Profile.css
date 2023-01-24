@@ -83,7 +83,8 @@
     padding-top: 100px; */
     display: flex;
     justify-content: flex-end;
-    padding: 200px 400px 200px 200px;
+    /* padding: 200px 400px 200px 200px; */
+    right: auto;
 }
 .center {
     text-align: center;
