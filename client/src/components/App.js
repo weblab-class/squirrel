@@ -55,10 +55,10 @@ const App = () => {
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
         <Profile path="/profile" userId={userId}/> 
-        <Messages path="/messages" userId={userId}/>
+        <Messages path="/forum" userId={userId}/>
         <Calendar path="/calendar" userId={userId}/> 
         <NotFound default />
-        <Forum path="/forum" userId={userId}/>
+        <Forum path="/messages" userId={userId}/>
         <FindGroup path="/findgroup"/>
       </Router>
     </>

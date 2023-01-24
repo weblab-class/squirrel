@@ -34,16 +34,17 @@ const NavBar = ({userId, handleLogin, handleLogout}) => {
             {userId ? (
                  <Link to={`/profile/`} className="NavBar-link icons">
                 
-                    <BsPersonCircle /> Profile
-                        <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
-                        <button
-                            onClick={() => {
-                            googleLogout();
-                            handleLogout();
-                        }}>
-                            Logout
-                        </button>
-                    </GoogleOAuthProvider>
+                    <BsPersonCircle/> Profile
+                    
+                <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+                <button
+                    onClick={() => {
+                    googleLogout();
+                    handleLogout();
+                }}>
+                    Logout
+                </button>
+            </GoogleOAuthProvider>
                 </Link>
 
             ): (
