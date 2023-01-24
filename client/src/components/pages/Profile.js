@@ -3,6 +3,7 @@ import { Link } from "@reach/router";
 import {MdLocationOn} from "react-icons/md";
 import NavBar from "../modules/NavBar.js";
 import { get } from "../../utilities";
+import squirrel from "../../public/squirrelpic.jpeg"
 
 import "./Profile.css";
 
@@ -23,6 +24,7 @@ const Profile = (props) => {
         <div className="bigContainer">
             <div className="Profile-avatarContainer">
                 <div className="Profile-avatar" />
+                <img src={squirrel}/>
             </div>
 
             <h1 className="Profile-name u-textLeft">
