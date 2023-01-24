@@ -15,6 +15,7 @@ const Reply = require("./models/reply");
 const Post = require("./models/post");
 const Group = require("./models/group");
 const Event = require("./models/event");
+const Forum = require("./models/forum");
 
 // import authentication library
 const auth = require("./auth");
@@ -164,6 +165,19 @@ router.post("/message", auth.ensureLoggedIn, (req, res) => {
   message.save();
 
   socketManager.getIo().emit("message", message);
+});
+
+router.post("/story", auth.ensureLoggedIn, (req, res) => {
+  console.log(req.body);
+  const newForum = new Forum({
+    username: req.user.name,
+    content: req.body.content
+  });
+  newForum.save().then((group) => res.send(group));
+});
+
+router.get("/stories", (req, res) => {
+  Forum.find({}).then((messages) => res.send(messages));
 });
 
 // anything else falls to this "not found" case
