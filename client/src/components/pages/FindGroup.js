@@ -1,7 +1,7 @@
 import React, { useEffect, useState, Component } from "react";
 import "../modules/SearchBar.js"
 import SB from "../modules/SearchBar.js";
-import BookData from "./Data.json";
+//import BookData from "./Data.json";
 import { get } from "../../utilities";
 
 import "./FindGroup.css";
