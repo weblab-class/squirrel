@@ -16,7 +16,7 @@ const Messages = (props) => {
         <>
             <div class="container">
                 <div class=".Messages-title">
-                    <h1>Group Messages</h1>
+                    <h1>Forum</h1>
                 </div>
 
                 <div class="lines">

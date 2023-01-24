@@ -3,6 +3,11 @@
   font-family: "Arial";
   font-size: 14px;
   padding: var(--s) var(--m);  
+  /* padding-bottom: 30px; */
+}
+
+.NewPostInput{
+    padding-bottom: 30px;
 }
 
 .NewPostInput-input {
