@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { Link } from "@reach/router";
 import {MdLocationOn} from "react-icons/md";
 import { get } from "../../utilities";
+import squirrel from "../../public/squirrelpic.jpeg"
 
 import squirrel from "../../public/squirrelpic.jpeg"
 import "./Profile.css";
