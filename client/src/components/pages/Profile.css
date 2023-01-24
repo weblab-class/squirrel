@@ -50,18 +50,18 @@
 }
 
 /* .Profile-avatar{
-    background-image: url("../../public/squirrelpic.jpeg")
+    background-image: url("../../public/squirrelpic.jpg")
 } */
 
 .Profile-name{
     padding: 0px 15px;
     text-align: center;
-    display:flex;
 }
 
 .container{
     padding: 0px 15px;
     position: relative;
+    padding-top: 500px;
 }
 
 .Profile-avatar{
@@ -71,4 +71,25 @@
 #sq_img {
     border-radius: 50%;
     height: 200px;
+}
+
+/* .u-textLeft {
+    padding-left: 15px;
+} */
+
+.right {
+    /* text-align: right;
+    padding-right: 200px;
+    padding-top: 100px; */
+    display: flex;
+    justify-content: flex-end;
+    padding: 200px 400px 200px 200px;
+}
+.center {
+    text-align: center;
+}
+
+.buttonCust {
+    font-size: x-large;
+    text-align: center;
 }

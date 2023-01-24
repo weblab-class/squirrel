@@ -72,6 +72,12 @@
   
 } 
 
+.unloggedinHomeContainer{
+  display: grid;
+  grid-template-columns: 1.5 fr;
+  text-align: center;
+}
+
 .Title {
   text-align: center;
   font-size: x-large;

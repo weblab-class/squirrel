@@ -5,8 +5,8 @@ import { BsPersonCircle } from "react-icons/bs";
 import { GiSquirrel } from "react-icons/gi";
 import {Nav, Navbar, NavDropdown} from "react-bootstrap";
 import {MdForum} from "react-icons/md"; 
-import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 import "./NavBar.css";
+import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
 
 const GOOGLE_CLIENT_ID="48664241058-q3dvrh1u5u8276n9h8iio1evghqf88ob.apps.googleusercontent.com";
 const NavBar = ({userId, handleLogin, handleLogout}) => {

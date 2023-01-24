@@ -20,6 +20,7 @@ import { get, post } from "../utilities";
  * Define the "App" component
  */
 const App = () => {
+  //const [loggedIn, setLoggedIn] = useState(false);
   const [userId, setUserId] = useState(undefined);
 
   useEffect(() => {
@@ -42,7 +43,7 @@ const App = () => {
   };
 
   const handleLogout = () => {
-    setUserId(undefined);
+    setUserId(null);
     post("/api/logout");
   };
 
@@ -63,8 +64,7 @@ const App = () => {
       </Router>
     </>
   );
-};
-
+  }
 export default App;
 
 

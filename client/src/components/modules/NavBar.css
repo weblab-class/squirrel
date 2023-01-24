@@ -1,17 +1,12 @@
 .NavBar-container {
-    padding: var(--s) var(--m);
-    background: #425164;
-    /* width: 100%; */
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  
-  .NavBar-title {
-    color: var(--white);
-    font-size: 21px;
-  }
+  padding: var(--s) var(--m);
+  background: #425164;
+  /* width: 100%; */
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
   .NavBar-linkContainer {
     display: flex;

@@ -17,6 +17,7 @@
 // this is a tool provided by staff, so you don't need to worry about it
 const validator = require("./validator");
 validator.checkSetup();
+//TODO: require('dotenv').config();
 
 //import libraries needed for the webserver to work!
 const http = require("http");

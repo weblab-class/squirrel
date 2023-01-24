@@ -2,9 +2,10 @@ import React, {useState, useEffect} from "react";
 import { Link } from "@reach/router";
 import {MdLocationOn} from "react-icons/md";
 import { get } from "../../utilities";
-import squirrel from "../../public/squirrelpic.jpeg"
-import "./Profile.css";
+import squirrel from "../../public/squirrelpic.jpg"
 
+import "./Profile.css";
+import {GrEdit} from "react-icons/gr"; 
 const Profile = (props) => {
     const [user, setUser] = useState("user")
     
@@ -21,42 +22,44 @@ const Profile = (props) => {
         </div>)
     }
     return(
-        <div className="bigContainer">
-            <div className="Profile-avatarContainer">
+        <>
+        <div className="bigContainer center">
+            <div className="Profile-avatarContainer ">
                 <div className="Profile-avatar"> 
                     <img id="sq_img" src={squirrel}/>
                 </div>
             </div>
 
-            <h1 className="Profile-name u-textLeft">
-                {user.name}
+            <h1 className="Profile-name">
+                <div className="center">{user.name}</div>
             </h1>
-
-            <div className="container">
-                <div className="lines">
-                    <div className="diamond"></div>
-                </div>
-            </div>
-
-            <div classNmae="Profile-information">
-                <div className="Profile-location u-textLeft">
+            <div className="Profile-information">
+                 <div className="Profile-location u-textLeft">
                     <MdLocationOn/> {user.location ? user.location : "No location"}
                 </div>
 
                 <div className="Profile-foodRestrictions u-textLeft">
-                    Food Restrictions: {user.preferences?.restrictions ? user.preferences.restrictions : "No restrictions"}
+                    Food Restrictions: {user.preferences?( user.restrictions ? (user.preferences.restrictions): ("No restrictions")) : ("No restrictions")}
                 </div>
 
                 <div className="Profile-Allergies u-textLeft">
-                    Allergies: {user.preferences?.allergies ? user.preferences.allergies : "No allergies"}
+                    Allergies: {user.preferences? (user.allergies ? (user.preferences.allergies) : "No allergies"): ("No allergies")}
                 </div>
 
-                <div className="Cooking Preferences u-textLeft">
-                    Cooking Preferences: {user.preferences?.time ? user.preferences.time : "No time preferences"}
+                <div className="Cooking Preferences u-textBottom">
+                    Cooking Preferences: {user.preferences? (user.time ? (user.preferences.time) :"No time preferences") : "No time preferences"}
                 </div>
+                <br/>
             </div>
-            
+            <div className="lines">
+                <div className="diamond" />
+            </div>
+        </div>   
+        <div className="right">
+            <GrEdit size={42}/> <button className="buttonCust"> Edit </button> 
         </div>
+        </>  
+          
     )
 }
 
