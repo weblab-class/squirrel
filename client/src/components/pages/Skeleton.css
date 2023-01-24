@@ -67,7 +67,7 @@
 
 .HomeContainer { 
   display: grid;
-  grid-template-columns: 1.5fr 2.5fr 1fr;
+  grid-template-columns: 1.5fr 2.5fr 1.2fr;
   text-align: center;
   
 } 
