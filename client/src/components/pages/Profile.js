@@ -36,22 +36,23 @@ const Profile = (props) => {
                     </div>
 
                     <div className="Profile-foodRestrictions u-textCenter">
-                        Food Restrictions: {user.preferences?.restrictions ? user.preferences.restrictions : "No restrictions"}
+                        Food Restrictions: {user.preferences?( user.restrictions ? (user.preferences.restrictions): ("No restrictions")) : ("No restrictions")}
                     </div>
 
                     <div className="Profile-Allergies u-textCenter">
-                        Allergies: {user.preferences?.allergies ? user.preferences.allergies : "No allergies"}
+                        Allergies: {user.preferences? (user.allergies ? (user.preferences.allergies) : "No allergies"): ("No allergies")}
                     </div>
 
                     <div className="Cooking Preferences u-textCenter">
-                        Cooking Preferences: {user.preferences?.time ? user.preferences.time : "No time preferences"}
-                    </div>
-                    <div className="container">
-                        <div className="lines">
-                            <div className="diamond"></div>
-                        </div>
+                        Cooking Preferences: {user.preferences? (user.time ? (user.preferences.time) :"No time preferences") : "No time preferences"}
                     </div>
                 </div>
+                <div className="container">
+                        <div className="lines">
+                            <div className="diamond"/>
+                        </div>
+                    </div>
+               
             </div>
     )
 }
