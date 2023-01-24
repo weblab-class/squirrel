@@ -3,6 +3,7 @@ import { Link } from "@reach/router";
 import {MdLocationOn} from "react-icons/md";
 import { get } from "../../utilities";
 import squirrel from "../../public/squirrelpic.jpg"
+
 import "./Profile.css";
 import {GrEdit} from "react-icons/gr"; 
 const Profile = (props) => {
