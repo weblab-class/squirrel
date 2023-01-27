@@ -14,7 +14,7 @@ const NavBar = ({userId, handleLogin, handleLogout}) => {
     <nav className="NavBar-container">
         <div className="NavBar-title u-inlineBlock">
             <Link to ="/" className="NavBar-link">
-                <GiSquirrel/> TBD Logo
+                <GiSquirrel/> SQU&IRREL
             </Link>
         </div>
 

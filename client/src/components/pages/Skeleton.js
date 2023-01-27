@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "@reach/router";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
+import "./Calendar.js"
 
 import NavBar from "../modules/NavBar.js";
 import "../../utilities.css";
@@ -13,7 +14,9 @@ const GOOGLE_CLIENT_ID = "48664241058-q3dvrh1u5u8276n9h8iio1evghqf88ob.apps.goog
 const Skeleton = ({ userId}) => {
   return (
      <div className="bigContainer">
-      {userId ?  <div className="HomeContainer">
+      {userId ?  
+      
+      <div className="HomeContainer">
         <div className="messagesColumn">
           <Link to="/messages/" className="Title">
               Messages
@@ -26,15 +29,19 @@ const Skeleton = ({ userId}) => {
         </div>
         <div className="eventsColumn">
           <Link to="/calendar/" className="Title">
-                Events
-            </Link>
+            Events
+          </Link>
+          <div>
+            {/* {events="/api/get_events"} */}
+          </div>
           <div className="recommendationsColumn"> 
             <Link to="/findgroup/" className="Title">
                   Recommendations
             </Link>
           </div>
         </div>
-    </div>: (<>
+    </div>: 
+    (<>
     <div className="forumColumn">
           <div className="Title">Forum</div>
         </div>
