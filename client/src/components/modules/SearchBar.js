@@ -68,33 +68,3 @@ function SearchBar({ placeholder, data }) {
 }
 
 export default SearchBar;
-
-// import React from 'react';
-// import { propTypes } from 'react-bootstrap/esm/Image';
-// import { GrFormSearch } from "react-icons/gr";
-
-// import "./SearchBar.css"
-
-// function SB({placeholder, data}){
-//     return (
-//         <div className="search">
-//             <div className="searchInputs">
-//                 <input type="text" placeholder={placeholder} />
-//                 <div className="searchIcon">
-//                     <GrFormSearch/>
-//                 </div>
-//             </div>
-//             <div className="dataResult">
-//                 {data.map((value, key) => {
-//                     return (
-//                         <a className="dataItem" href={value.link} target="_blank"> 
-//                             <p>{value.type}</p>
-//                         </a>
-//                     )
-//                 })}
-//             </div>
-//         </div>
-//     )
-// }
-
-// export default SB

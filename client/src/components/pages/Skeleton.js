@@ -1,6 +1,7 @@
 import React, { useEffect, useState, Component } from "react";
 import { Link } from "@reach/router";
 import { GoogleOAuthProvider, GoogleLogin, googleLogout } from "@react-oauth/google";
+import "./Calendar.js"
 
 import NavBar from "../modules/NavBar.js";
 import "../../utilities.css";
@@ -31,7 +32,9 @@ const Skeleton = ({ userId}) => {
  
   return (
      <div className="bigContainer">
-      {userId ?  <div className="HomeContainer">
+      {userId ?  
+      
+      <div className="HomeContainer">
         <div className="messagesColumn">
           <Link to="/messages/" className="Title">
               Messages
@@ -61,7 +64,8 @@ const Skeleton = ({ userId}) => {
             </Link>
           </div>
         </div>
-    </div>: (<>
+    </div>: 
+    (<>
     <div className="forumColumn">
           <div className="Title">Forum</div>
         </div>

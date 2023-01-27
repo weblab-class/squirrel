@@ -43,19 +43,21 @@ const Messages = (props) => {
     }
     return (
       <>
-        <div>
-          <h1 className="Title-container">
-            Forum
-          </h1>
-          <div className="lines">
-            <div className="diamond" />
+      <div>
+        <div className="total-container">
+            <h1 className="Title-container">
+              Forum
+            </h1>
+            <div className="lines">
+              <div className="diamond" />
+            </div>
+            <br/>
           </div>
-          <br/>
-        </div>
-        <div>
-        {props.userId && <NewStory addNewStory={addNewStory} />}
-        {storiesList}
-        </div>
+          <div className="stories">
+            {props.userId && <NewStory addNewStory={addNewStory} />}
+            {storiesList}
+          </div>
+      </div>
       </>
     );
 }
