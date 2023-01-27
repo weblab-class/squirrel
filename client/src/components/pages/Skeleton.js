@@ -72,6 +72,7 @@ const Skeleton = ({ userId}) => {
           <Link to="/messages/" className="Title">
               Messages
           </Link>
+            <div className="lines2"/>
           <div>
             {messages.split("\n").map(function(item) {
               return (
@@ -87,6 +88,7 @@ const Skeleton = ({ userId}) => {
           <Link to="/forum/" className="Title">
                 Forum
             </Link>
+            <div className="lines2"/>
           <div>
             {forum.split("\n").map(function(item) {
               return (
@@ -99,25 +101,28 @@ const Skeleton = ({ userId}) => {
           </div>
         </div>
         <div className="eventsColumn">
-          <Link to="/calendar/" className="Title">
-                Events
-          </Link>
-          <div className="lines2"/>
-          <div>
-            {/* {events[0].title}  @IZZY — EDIT THIS LINE!!  */}
-            {events.split("\n").map(function(item) {
-              return (
-                <span>
-                  {item}
-                  <br/>
-                </span>
-              )
-            })}
+          <div className="actualEventsColumn">
+            <Link to="/calendar/" className="Title">
+                  Events
+            </Link>
+            <div className="lines2"/>
+            <div>
+              {/* {events[0].title}  @IZZY — EDIT THIS LINE!!  */}
+              {events.split("\n").map(function(item) {
+                return (
+                  <span>
+                    {item}
+                    <br/>
+                  </span>
+                )
+              })}
+          </div>
           </div>
           <div className="recommendationsColumn"> 
             <Link to="/findgroup/" className="Title">
                   Recommendations
             </Link>
+            <div className="lines2"/>
           </div>
         </div>
     </div>: 
