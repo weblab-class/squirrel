@@ -34,8 +34,12 @@ const Skeleton = ({ userId}) => {
         get(`/api/stories`, { }).then((userObj) => {
           let str = "";
           let max_val = userObj.length > 10 ? 10 : userObj.length;
-          for(let i = userObj.length-1; i > userObj.length-1-max_val; i--) {
-            str += `${userObj[i].content} \n`;
+          for (let i = userObj.length-1; i > userObj.length-1-max_val; i--) {
+            if (userObj[i].content.length > 20) { 
+              i--;
+            } else {
+              str += `${userObj[i].content} \n`;
+            }
           }
           console.log(str);
           setForum(str);
@@ -48,7 +52,11 @@ const Skeleton = ({ userId}) => {
           let str = "";
           let max_val = userObj.length > 10 ? 10 : userObj.length;
           for(let i = userObj.length-1; i > userObj.length-1-max_val; i--) {
-            str += `${userObj[i].content} \n`;
+            if (userObj[i].content.length > 20) { 
+              i--;
+            } else {
+              str += `${userObj[i].content} \n`; 
+            }
           }
           console.log(str);
           setMessages(str);
