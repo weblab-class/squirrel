@@ -25,7 +25,7 @@ function SearchBar({ placeholder, data }) {
   const clearInput = () => {
     setFilteredData([]);
     setWordEntered("");
-  }; 
+  };
 
   const handleGroup = (group) => {
     if (window.confirm('Are you sure you want to join this group?')) {
@@ -56,8 +56,8 @@ function SearchBar({ placeholder, data }) {
         <div className="dataResult">
           {filteredData.slice(0, 15).map((value, key) => {
             return (
-              <a className="dataItem" target="_blank">
-                <p onClick={handleGroup}>{value.title} </p>
+              <a className="dataItem" href={value.link} target="_blank">
+                 <p onClick={handleGroup}>{value.title}</p>
               </a>
             );
           })}
