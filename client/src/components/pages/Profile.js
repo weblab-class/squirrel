@@ -3,11 +3,21 @@ import { Link } from "@reach/router";
 import {MdLocationOn} from "react-icons/md";
 import { get } from "../../utilities";
 import squirrel from "../../public/squirrelpic.jpg"
-
+import Form from "../modules/ProfileForm.js"
 import "./Profile.css";
 import {GrEdit} from "react-icons/gr"; 
+
+// const Form = () => {
+//     return <>
+//         <div>Form</div>
+//         <input type="text" id="fname" name="fname"/>
+//     </>
+// }
+
 const Profile = (props) => {
     const [user, setUser] = useState("user")
+
+    const [showForm, setShowForm] = useState(false);
     
     useEffect(() => {
         document.title = "Profile Page";
@@ -15,9 +25,10 @@ const Profile = (props) => {
       }, []);
 
     const handleButton = (event) => {
-        
+
     }
-    
+    // function myFunction() {
+    //     window.location.href = "../editprefs.html";}
     if(!props.userId){
         return(
         <div className="login_required">
@@ -58,10 +69,14 @@ const Profile = (props) => {
             <div className="lines">
                 <div className="diamond" />
             </div>
+            <div className="right">
+            {/* <GrEdit size={42}/> <button className="buttonCust"> Edit </button>  */}
+            <button onClick={() => { console.log("clicked");
+                setShowForm(!showForm);}} >{showForm ? "Save": "Edit"}</button>
+            </div>
+            {showForm ? <Form/> : ""}
         </div>   
-        <div className="right">
-            <GrEdit size={42}/> <button className="buttonCust"> Edit </button> 
-        </div>
+
         </>  
           
     )
