@@ -38,7 +38,7 @@ const Profile = (props) => {
     }
     return(
         <>
-        <div className="bigContainer center">
+        <div className="bigContainer2 center">
             <div className="Profile-avatarContainer ">
                 <div className="Profile-avatar"> 
                     <img id="sq_img" src={squirrel}/>

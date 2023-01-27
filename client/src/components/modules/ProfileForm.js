@@ -4,11 +4,6 @@ import Select from "react-select";
 
 // import Multiselect from 'multiselect-react-dropdown';
 
-const options = [
-    { value: 'chocolate', label: 'Chocolate' },
-    { value: 'strawberry', label: 'Strawberry' },
-    { value: 'vanilla', label: 'Vanilla' }
-  ]
  const Form = (props) => {
 //     this.state = {
 //         options: [{name: 'Peanuts', id: 1},{name: 'Nuts', id: 2}]
