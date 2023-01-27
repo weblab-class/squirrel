@@ -19,7 +19,15 @@ const Skeleton = ({ userId}) => {
   const [messages, setMessages] = useState("messages")
 
     useEffect(() => {
-        get(`/api/get_events`, { }).then((userObj) => setEvents(userObj));
+        get(`/api/get_events`, { }).then((userObj) => {
+          let str = "";
+          let max_val = userObj.length > 10 ? 10 : userObj.length;
+          for(let i = 0; i < max_val; i++) {
+            str += `${userObj[i].start}: ${userObj[i].title} \n`;
+          }
+          console.log(str);
+          setEvents(str);
+        });
       }, []);
 
     useEffect(() => {
@@ -55,8 +63,17 @@ const Skeleton = ({ userId}) => {
           <Link to="/calendar/" className="Title">
                 Events
           </Link>
+          <div className="lines2"/>
           <div>
-            {events[0].title}  @IZZY — EDIT THIS LINE!! 
+            {/* {events[0].title}  @IZZY — EDIT THIS LINE!!  */}
+            {events.split("\n").map(function(item) {
+              return (
+                <span>
+                  {item}
+                  <br/>
+                </span>
+              )
+            })}
           </div>
           <div className="recommendationsColumn"> 
             <Link to="/findgroup/" className="Title">

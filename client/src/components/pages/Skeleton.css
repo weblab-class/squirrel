@@ -14,6 +14,7 @@
   top: 46px;
   min-height: 100%;
   width: 100vw;
+  padding: 15px 0px 0px 8px;
 }
 
 .messagesColumn {
@@ -23,7 +24,12 @@
   font-size: x-large;
   padding-left: 20px;
   padding-right: 20px;
-  /* text-decoration: none; */
+
+  border: black;
+  border-style:solid;
+  border-width: 2px;
+  border-radius: 10%;
+  padding-top: 4px;
 }
 
 .forumColumn {
@@ -33,7 +39,14 @@
   font-size: x-large;
   padding-left: 20px;
   padding-right: 20px;
+  
+  border: black;
+  border-style:solid;
+  border-width: 2px;
+  border-radius: 10%;
+  padding-top: 4px;
 }
+
 .eventsColumn {
   /* text-align: center; */
   margin-left: auto;
@@ -43,7 +56,13 @@
   font-size: x-large;
   padding-left: 20px;
   padding-right: 20px;
+  border: black;
+  border-style:solid;
+  border-width: 2px;
+  border-radius: 10%;
+  padding-top: 4px;
 }
+
 .recommendationsColumn{
   /* text-align: center; */
   margin-left: auto;
@@ -67,7 +86,7 @@
 
 .HomeContainer { 
   display: grid;
-  grid-template-columns: 1.5fr 2.5fr 1.2fr;
+  grid-template-columns: 1.5fr 2.5fr 1.5fr;
   text-align: center;
   
 } 
@@ -85,4 +104,20 @@
   background-color: antiquewhite;
   text-decoration: none;
   color: black;
+}
+
+
+.lines2{
+  width: 100%;
+  /* height: 20px; */
+  position: relative;    
+  content:'';
+  /* position: absolute; */
+  margin: auto;
+  height: 2px;
+  background: black;
+  /* width: 45%; */
+  /* top: 45%; */
+  left: 0;
+  margin: 4px 0px;
 }
