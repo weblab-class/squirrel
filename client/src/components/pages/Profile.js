@@ -32,11 +32,12 @@ const Profile = (props) => {
                 <div className="Profile-avatar"> 
                     <img id="sq_img" src={squirrel}/>
                 </div>
+
+                <h1 className="Profile-name">
+                    <div className="center">{user.name}</div>
+                </h1>
             </div>
 
-            <h1 className="Profile-name">
-                <div className="center">{user.name}</div>
-            </h1>
             <div className="Profile-information">
                  <div className="Profile-location u-textLeft">
                     <MdLocationOn/> {user.location ? user.location : "No location"}
