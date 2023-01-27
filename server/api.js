@@ -180,6 +180,16 @@ router.get("/stories", (req, res) => {
   Forum.find({}).then((messages) => res.send(messages));
 });
 
+router.post("/comment", auth.ensureLoggedIn, (req, res) => {
+  const newComment = new Reply({
+    username: req.user.name,
+    parent: req.body.parent,
+    content: req.body.content,
+  });
+
+  newComment.save().then((comment) => res.send(comment));
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);
