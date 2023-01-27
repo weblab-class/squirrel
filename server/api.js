@@ -169,6 +169,13 @@ router.post("/story", auth.ensureLoggedIn, (req, res) => {
   newForum.save().then((group) => res.send(group));
 });
 
+router.post("/join_group", (req, res) => {
+  User.update({_id: req.user._id}, {group: req.body.group}, (err, affected, resp) => {
+    if (err) console.error(err);
+    console.log(resp);
+  });
+});
+
 router.get("/stories", (req, res) => {
   Forum.find({}).then((messages) => res.send(messages));
 });

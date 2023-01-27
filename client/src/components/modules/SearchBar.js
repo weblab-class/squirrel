@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./SearchBar.css";
 import { GrFormSearch, GrClose } from "react-icons/gr";
 // import CloseIcon from "@material-ui/icons/Close";
+import { post, get } from "../../utilities";
 
 function SearchBar({ placeholder, data }) {
   const [filteredData, setFilteredData] = useState([]);
@@ -26,6 +27,14 @@ function SearchBar({ placeholder, data }) {
     setWordEntered("");
   };
 
+  const handleGroup = (group) => {
+    if (window.confirm('Are you sure you want to join this group?')) {
+      console.log(group)
+      const body = {group: group.currentTarget.textContent.trim()}
+      post("/api/join_group", body).then((res) => console.log(res))
+    } 
+  };
+
   return (
     <div className="search">
       <div className="searchInputs">
@@ -48,7 +57,7 @@ function SearchBar({ placeholder, data }) {
           {filteredData.slice(0, 15).map((value, key) => {
             return (
               <a className="dataItem" href={value.link} target="_blank">
-                <p>{value.title} </p>
+                 <p onClick={handleGroup}>{value.title}</p>
               </a>
             );
           })}
