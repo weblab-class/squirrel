@@ -108,18 +108,13 @@ const Forum = (props) => {
     <>
       <div className="u-relative Forum-container">
         <h1 className="forum-title">Group Messages</h1>
-        {/* <div className="Forum-userList">
-          <ChatList
-            setActiveUser={setActiveUser}
-            userId={props.userId}
-            users={activeUsers}
-            active={activeChat.recipient}
-          /> */}
+        <div className="lines">
+                <div className="diamond" />
+        </div>
             <div className="Forum-chatContainer u-relative">
             <Chat data={activeChat} />
             </div>
         </div>
-      {/* </div> */}
     </>
   );
 }

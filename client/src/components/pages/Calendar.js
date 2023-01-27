@@ -83,7 +83,7 @@ export default class Calendar extends React.Component {
         <div className='demo-app-sidebar-section'>
           <h2>All Events ({this.state.currentEvents.length})</h2>
           <ul>
-            {this.state.currentEvents.map(renderSidebarEvent)}
+            {this.state.currentEvents.sort((a,b) => a['start'] > b['start'] ? 1 : a['start'] < b['start'] ? -1 : 0).map(renderSidebarEvent)}
           </ul>
         </div>
       </div>
@@ -145,6 +145,10 @@ function renderEventContent(eventInfo) {
 }
 
 function renderSidebarEvent(event) {
+  console.log(event);
+
+
+
   return (
     <li key={event.id}>
       <b>{formatDate(event.start, {year: 'numeric', month: 'short', day: 'numeric'})}</b>

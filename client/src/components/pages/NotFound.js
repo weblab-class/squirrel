@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-import NavBar from "../modules/NavBar.js"
+// import NavBar from "../modules/NavBar.js"
 
 import "./NotFound.css"
 
@@ -66,10 +66,10 @@ const NotFound = () => {
       <br/>
       <br/>
       <a href="https://tinyurl.com/blepppppppp" className="rick-roll">
-        It seems stack overflow comes in clutch again as seen here, but since this is a 404 page, so having this broken is in character
+        According to stackoverflow here is the reason.
       </a>
-      <br/>
-      <br/>
+      <p>
+        But since this is a 404 page, I suppose it would make sense that even this page is broken.</p>
       <br/>
       <br/>
       <br/>
