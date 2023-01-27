@@ -67,7 +67,7 @@ export default class Calendar extends React.Component {
             <li>Select dates and you will be prompted to create a new event.</li>
             <li>Drag, drop, and resize events.</li>
             <li>Click an event to delete it.</li>
-            <li>Aren't you glad this isn't Google Calendar?</li>
+            <li>Be glad you were spared the horrors of an embedded Google Calendar.</li>
           </ul>
         </div>
         <div className='demo-app-sidebar-section'>
@@ -78,6 +78,8 @@ export default class Calendar extends React.Component {
               onChange={this.handleWeekendsToggle}
             ></input>
             Toggle Weekends
+            <br/>
+            <br/>
           </label>
         </div>
         <div className='demo-app-sidebar-section'>
