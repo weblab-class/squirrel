@@ -190,6 +190,12 @@ router.post("/comment", auth.ensureLoggedIn, (req, res) => {
   newComment.save().then((comment) => res.send(comment));
 });
 
+router.get("/comment", (req, res) => {
+  Reply.find({ parent: req.query.parent }).then((comments) => {
+    res.send(comments);
+  });
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);
