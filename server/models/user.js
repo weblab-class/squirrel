@@ -14,8 +14,7 @@ const UserSchema = new mongoose.Schema({
     name: String,
     img: String,
     location: String,
-    badges: String,
-    group: String
+    badges: String
 });
 
 

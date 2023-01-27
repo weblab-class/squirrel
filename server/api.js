@@ -139,13 +139,6 @@ router.get("/get_groups", (req, res) => {
   });
 });
 
-router.post("/join_group", (req, res) => {
-  User.update({_id: req.user._id}, {group: req.body.group}, (err, affected, resp) => {
-    if (err) console.error(err);
-    console.log(resp);
-  });
-});
-
 router.post("/del_event", (req, res) => {
   Event.findOneAndDelete({title: req.body.title, start: req.body.start, end: req.body.end}, (err) => {if (err) console.error(err);})
 });
