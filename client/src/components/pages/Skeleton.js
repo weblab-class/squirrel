@@ -19,15 +19,40 @@ const Skeleton = ({ userId}) => {
   const [messages, setMessages] = useState("messages")
 
     useEffect(() => {
-        get(`/api/get_events`, { }).then((userObj) => setEvents(userObj));
+        get(`/api/get_events`, { }).then((userObj) => {
+          let str = "";
+          let max_val = userObj.length > 10 ? 10 : userObj.length;
+          for(let i = 0; i < max_val; i++) {
+            str += `${userObj[i].start}: ${userObj[i].title} \n`;
+          }
+          console.log(str);
+          setEvents(str);
+        });
       }, []);
 
     useEffect(() => {
-        get(`/api/stories`, { }).then((userObj) => setForum(userObj));
+        get(`/api/stories`, { }).then((userObj) => {
+          let str = "";
+          let max_val = userObj.length > 10 ? 10 : userObj.length;
+          for(let i = userObj.length-1; i > userObj.length-1-max_val; i--) {
+            str += `${userObj[i].content} \n`;
+          }
+          console.log(str);
+          setForum(str);
+        });
+
       }, []);
 
     useEffect(() => {
-        get(`/api/chat`, { }).then((userObj) => setMessages(userObj));
+        get(`/api/chat`, { }).then((userObj) => {
+          let str = "";
+          let max_val = userObj.length > 10 ? 10 : userObj.length;
+          for(let i = userObj.length-1; i > userObj.length-1-max_val; i--) {
+            str += `${userObj[i].content} \n`;
+          }
+          console.log(str);
+          setMessages(str);
+        });
       }, []);
  
   return (
@@ -40,7 +65,14 @@ const Skeleton = ({ userId}) => {
               Messages
           </Link>
           <div>
-            {messages[messages.length-1].content}  @IZZY — EDIT THIS LINE!!   
+            {messages.split("\n").map(function(item) {
+              return (
+                <span>
+                  {item}
+                  <br/>
+                </span>
+              )
+            })}
           </div>
         </div>
         <div className="forumColumn">
@@ -48,15 +80,31 @@ const Skeleton = ({ userId}) => {
                 Forum
             </Link>
           <div>
-            {forum[forum.length-1].content}  @IZZY — EDIT THIS LINE!!   
+            {forum.split("\n").map(function(item) {
+              return (
+                <span>
+                  {item}
+                  <br/>
+                </span>
+              )
+            })} 
           </div>
         </div>
         <div className="eventsColumn">
           <Link to="/calendar/" className="Title">
                 Events
           </Link>
+          <div className="lines2"/>
           <div>
-            {events[0].title}  @IZZY — EDIT THIS LINE!! 
+            {/* {events[0].title}  @IZZY — EDIT THIS LINE!!  */}
+            {events.split("\n").map(function(item) {
+              return (
+                <span>
+                  {item}
+                  <br/>
+                </span>
+              )
+            })}
           </div>
           <div className="recommendationsColumn"> 
             <Link to="/findgroup/" className="Title">
