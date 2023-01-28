@@ -37,7 +37,7 @@ const Skeleton = ({ userId }) => {
         if (userObj[i].content.length > 20) {
           i--;
         } else {
-          str += `${userObj[i].content} \n`;
+          str += `${userObj[i].username}: ${userObj[i].content} \n`;
         }
       }
       console.log(str);
@@ -53,7 +53,7 @@ const Skeleton = ({ userId }) => {
         if (userObj[i].content.length > 20) {
           i--;
         } else {
-          str += `${userObj[i].content} \n`;
+          str += `${userObj[i].username}: ${userObj[i].content} \n`;
         }
       }
       console.log(str);
@@ -71,7 +71,7 @@ const Skeleton = ({ userId }) => {
                 Messages
               </Link>
               <div className="lines2" />
-              <div>
+              <div className="listOfMessages">
                 {messages.split("\n").map(function (item) {
                   return (
                     <span>
@@ -87,7 +87,7 @@ const Skeleton = ({ userId }) => {
                 Forum
               </Link>
               <div className="lines2" />
-              <div>
+              <div className="listOfPosts">
                 {forum.split("\n").map(function (item) {
                   return (
                     <span>
@@ -105,8 +105,7 @@ const Skeleton = ({ userId }) => {
                   Events
                 </Link>
                 <div className="lines2" />
-                <div>
-                  {/* {events[0].title}  @IZZY — EDIT THIS LINE!!  */}
+                <div className="listOfEvents">
                   {events.split("\n").map(function (item) {
                     return (
                       <span>
@@ -128,7 +127,7 @@ const Skeleton = ({ userId }) => {
         </div>
       ) : (
         <>
-          <div className="forumColumn">
+          <div className="noLoginForumColumn">
             <div className="Title">Forum</div>
           </div>
         </>
