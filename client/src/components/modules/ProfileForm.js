@@ -36,66 +36,76 @@ import Select from "react-select";
     return (
     <>
         <h1 className="Prefform">Preferences</h1>
-        <label for="Location">Location: </label>
-        <form action="DATAVASEEEESHREYA HELPPPPPPPP" method="post"> 
-            <select multiple className="chosen-select" name="test">
-                <option >Off-campus</option>
-                <option >Maseeh</option>
-                <option >McCormick</option>
-                <option>Baker</option>
-                <option>Burton Connor</option>
-                <option >MacGregor</option>
-                <option >East Campus</option>
-                <option >New House</option>
-                <option >Next</option>
-                <option >New Vassar</option>
-                <option >Simmons</option>
-                <option >Random Hall</option>
-                <option>Cambridge</option>
-                <option >Boston</option>
-                <option >Other</option>
-            </select>
-            <input type="submit"></input>
-        </form>
-        <br/>
-        <label for="Preferences">Food Restrictions: </label>
-        <form action="DATAVASEEEESHREYA HELPPPPPPPP" method="post"> 
-            <select multiple>
-                <option >Kosher</option>
-                <option >Vegetarian</option>
-                <option>Vegan</option>
-                <option >Keto</option>
-                <option >Other</option>
-            </select>
-            <input type="submit"></input>
-        </form>
-        <br/>
-        <label for="Preferences">Allergies: </label>
-        <form action="DATAVASEEEESHREYA HELPPPPPPPP" method="post"> 
-            <select multiple>
-                <option value="Peanuts">Peanuts</option>
-                <option value="Nuts">Nuts</option>
-                <option value="Soy">Soy</option>
-                <option value="Gluten">Gluten</option>
-                <option value="Shellfish">Shellfish</option>
-                <option value="Milk">Milk</option>
-                <option value="Fish">Fish</option>
-                <option value="Eggs">Eggs</option>
-                <option value="Eggs">Other</option>
-            </select>
-            <input type="submit"></input>
-        </form>
-        <br/>
-        <label for="Preferences">Cooking Preferences: </label>
-        <form action="DATAVASEEEESHREYA HELPPPPPPPP" method="post"> 
-            <select multiple>
-                <option value="Daytime">Morning (8:00-12:00) </option>
-                <option value="Daytime">Afternoon (12:00-16:00)</option>
-                <option value="Evening">Night (16:00-20:00)</option>
-            </select>
-            <input type="submit"></input>
-        </form>
-        
+        <div className="grid2Prefs">
+            <div className="gridPrefs">
+            <div className="gridBoxes">
+                <label for="Location">Location: </label>
+                <form action="DATAVASEEEESHREYA HELPPPPPPPP" method="post"> 
+                    <select multiple className="chosen-select" name="test">
+                        <option >Off-campus</option>
+                        <option >Maseeh</option>
+                        <option >McCormick</option>
+                        <option>Baker</option>
+                        <option>Burton Conner</option>
+                        <option >MacGregor</option>
+                        <option >East Campus</option>
+                        <option >New House</option>
+                        <option >Next</option>
+                        <option >New Vassar</option>
+                        <option >Simmons</option>
+                        <option >Random Hall</option>
+                        <option>Cambridge</option>
+                        <option >Boston</option>
+                        <option >Other</option>
+                    </select>
+                    <input type="submit"></input>
+                </form>
+            </div>
+            <div className="gridBoxes">
+                <label for="Preferences">Food Restrictions: </label>
+                <form action="DATAVASEEEESHREYA HELPPPPPPPP" method="post"> 
+                    <select multiple>
+                        <option >Kosher</option>
+                        <option >Vegetarian</option>
+                        <option>Vegan</option>
+                        <option >Keto</option>
+                        <option >Other</option>
+                    </select>
+                    <input type="submit"></input>
+                </form>
+            </div>
+            </div>
+            <div className="gridPrefs">
+                <div className="gridBoxes">
+                <label for="Preferences">Allergies: </label>
+                <form action="DATAVASEEEESHREYA HELPPPPPPPP" method="post"> 
+                    <select multiple>
+                        <option value="Peanuts">Peanuts</option>
+                        <option value="Nuts">Nuts</option>
+                        <option value="Soy">Soy</option>
+                        <option value="Gluten">Gluten</option>
+                        <option value="Shellfish">Shellfish</option>
+                        <option value="Milk">Milk</option>
+                        <option value="Fish">Fish</option>
+                        <option value="Eggs">Eggs</option>
+                        <option value="Eggs">Other</option>
+                    </select>
+                    <input type="submit"></input>
+                </form>
+                </div>
+                <div className="gridBoxes">
+                <label for="Preferences">Cooking Preferences: </label>
+                <form action="DATAVASEEEESHREYA HELPPPPPPPP" method="post"> 
+                    <select multiple>
+                        <option value="Daytime">Morning (8:00-12:00) </option>
+                        <option value="Daytime">Afternoon (12:00-16:00)</option>
+                        <option value="Evening">Night (16:00-20:00)</option>
+                    </select>
+                    <input type="submit"></input>
+                </form>
+                </div>
+        </div>
+    </div>   
 
         
         {/* <select name="allergies" id = "allergies">

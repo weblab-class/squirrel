@@ -3,3 +3,25 @@
   font-weight: 500px;
   font-size: xx-large;
 }
+
+/* 
+rows */
+.gridPrefs{
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+
+}
+
+/* outer box of 4 */
+.grid2Prefs{ 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    
+}
+
+.gridBoxes{
+    width: 50%;
+}
