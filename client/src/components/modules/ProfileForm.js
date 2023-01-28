@@ -37,7 +37,7 @@ import Select from "react-select";
     <>
         <h1 className="Prefform">Preferences</h1>
         <label for="Location">Location: </label>
-        <form action="DATAVASEEEESHREYA HELPPPPPPPP" method="post"> 
+        <form action="/api/update_location" method="post"> 
             <select multiple className="chosen-select" name="test">
                 <option >Off-campus</option>
                 <option >Maseeh</option>

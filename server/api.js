@@ -196,6 +196,19 @@ router.get("/comment", (req, res) => {
   });
 });
 
+router.post("/update_location", (req, res) => {
+  console.log(req);
+  console.log(req.body);
+  console.log(req.body._id);
+  return 1;
+  /*
+  User.update({_id: req.user._id}, {group: req.body.location}, (err, affected, resp) => {
+    if (err) console.error(err);
+    console.log(resp);
+  });
+  */
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);

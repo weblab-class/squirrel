@@ -12,7 +12,7 @@ const Messages = (props) => {
     // called when the "Feed" component "mounts", i.e.
     // when it shows up on screen
     useEffect(() => {
-      document.title = "News Feed";
+      document.title = "Forum";
       get("/api/stories").then((storyObjs) => {
         let reversedStoryObjs = storyObjs.reverse();
         setStories(reversedStoryObjs);
@@ -63,3 +63,4 @@ const Messages = (props) => {
 }
 
 export default Messages;
+
