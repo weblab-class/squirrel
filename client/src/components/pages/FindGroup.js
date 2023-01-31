@@ -3,9 +3,11 @@ import "../modules/SearchBar.js";
 import SB from "../modules/SearchBar.js";
 //import BookData from "./Data.json";
 import { get } from "../../utilities";
+import { Link } from "@reach/router";
 
 import "./FindGroup.css";
 import "./Forum.js";
+import "./MakeGroup";
 
 // props = array of groups (MUST BE AN ARRAY)
 const FindGroup = (props) => {
@@ -24,9 +26,9 @@ const FindGroup = (props) => {
             <h1>Find a Group</h1>
           </div>
           <div className="make">
-            {/* <Link to="/messages/" className="make_text"> */}
-            Make a Group
-            {/* </Link> */}
+            <Link to="/makegroup/" className="make_button">
+              Make a Group
+            </Link>
           </div>
         </div>
 

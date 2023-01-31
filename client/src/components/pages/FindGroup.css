@@ -17,3 +17,8 @@
   border-radius: 10px;
   padding: 4px;
 }
+
+.make_button {
+  text-decoration: none;
+  color: black;
+}

@@ -17,7 +17,7 @@ const MakeGroup = (props) => {
 
   return (
     <>
-      <div className="fg_container">
+      <div className="mg_container">
         <div className="title u-inlineBlock">
           <div className="find">
             <h1>Make a Group</h1>
