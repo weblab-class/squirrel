@@ -5,11 +5,9 @@ const UserSchema = new mongoose.Schema({
     googleid: String,
     username: String,
     password: String,
-    preferences: {
-       allergies: [String],
-       restrictions: [String],
-       time: String
-    },
+    allergies: [String],
+    restrictions: [String],
+    times: [String],
     name: String,
     img: String,
     locations: [String],

@@ -180,7 +180,17 @@ router.post("/join_group", (req, res) => {
 });
 
 router.post("/editpreferences", (req, res) => {
-  User.update({_id: req.user._id}, {locations: req.body.location}, (err, affected, resp) => {
+
+  let upd_thing = {};
+
+  if (req.body.locations) upd_thing.locations = req.body.locations;
+  if (req.body.allergies)  upd_thing.allergies = req.body.allergies;
+  if (req.body.restrictions)  upd_thing.restrictions = req.body.restrictions;
+  if (req.body.times)  upd_thing.times = req.body.times;
+
+  User.update(
+    {_id: req.user._id}, upd_thing,
+    (err, affected, resp) => {
     if (err) console.error(err);
     console.log(req.body.location);
   });

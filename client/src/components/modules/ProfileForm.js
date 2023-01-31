@@ -53,7 +53,7 @@ return (
                 <button onClick= {() => {
                     console.log(getSelectValues(document.getElementById('locations')));
                     post("/api/editpreferences", {
-                        location: getSelectValues(document.getElementById('locations'))
+                        locations: getSelectValues(document.getElementById('locations'))
                     }).then((res) => console.log(res));
                 }}>Show selected values</button>
             </div>
@@ -71,7 +71,7 @@ return (
                 </form>
                 <br/>
                 <button onClick= {() => {
-                    let all = getSelectValues(document.getElementById('restrictions'));
+                    console.log(getSelectValues(document.getElementById('restrictions')));
                     post("/api/editpreferences", {
                         restrictions: getSelectValues(document.getElementById('restrictions'))
                     }).then((res) => console.log(res));
@@ -118,7 +118,7 @@ return (
                 <button onClick= {() => {
                     console.log(getSelectValues(document.getElementById('cookingprefs')));
                     post("/api/editpreferences", 
-                        {cookingpreferences:getSelectValues(document.getElementById('cookingprefs'))
+                        {times:getSelectValues(document.getElementById('cookingprefs'))
                     }).then((res) => console.log(res));
                 }}>Show selected values</button>
                 </div>
