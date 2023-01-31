@@ -205,6 +205,17 @@ router.get("/comment", (req, res) => {
   });
 });
 
+router.get("/recommend", (req, res) => {
+  /* if (user.preferences?.allergies) {
+    Group.find({preferences: {allergies: user.preferences.allergies}}).then((groups) => res.send(groups)).catch((err) => console.error(err));
+  } else { */
+    Group.find({}).then((groups) => {
+      console.log(groups);
+      res.send(groups);
+    });
+  // }
+});
+
 // anything else falls to this "not found" case
 router.all("*", (req, res) => {
   console.log(`API route not found: ${req.method} ${req.url}`);
