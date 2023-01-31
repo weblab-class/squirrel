@@ -8,12 +8,11 @@ const UserSchema = new mongoose.Schema({
     preferences: {
        allergies: [String],
        restrictions: [String],
-       time: String,
-       cookingpref: String
+       time: String
     },
     name: String,
     img: String,
-    location: String,
+    locations: [String],
     badges: String,
     group: String
 });

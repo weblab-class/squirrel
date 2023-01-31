@@ -177,9 +177,9 @@ router.post("/join_group", (req, res) => {
 });
 
 router.post("/editpreferences", (req, res) => {
-  User.update({preferences: {allergies: req.body.allergies} }, {preferences: {location: req.body.location}}, (err, affected, resp) => {
+  User.update({_id: req.user._id}, {locations: req.body.location}, (err, affected, resp) => {
     if (err) console.error(err);
-    console.log(resp);
+    console.log(req.body.location);
   });
 });
 
