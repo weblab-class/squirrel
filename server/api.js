@@ -144,7 +144,7 @@ router.post("/del_event", (req, res) => {
 });
 
 router.get("/chat", (req, res) => {
-  Post.find({}).then((messages) => res.send(messages));
+  Post.find({group: (req.user.group ? req.user.group : "global")}).then((messages) => res.send(messages));
 });
 
 router.post("/message", auth.ensureLoggedIn, (req, res) => {
@@ -153,6 +153,7 @@ router.post("/message", auth.ensureLoggedIn, (req, res) => {
   // insert this message into the database
   const message = new Post({
     username: req.user.name,
+    group: req.user.group ? req.user.group : "global",
     content: req.body.content
   });
   message.save();
@@ -172,9 +173,17 @@ router.post("/story", auth.ensureLoggedIn, (req, res) => {
 router.post("/join_group", (req, res) => {
   User.update({_id: req.user._id}, {group: req.body.group}, (err, affected, resp) => {
     if (err) console.error(err);
-    console.log(resp);
+      req.user.group = req.body.group;
+      console.log(resp);
+      res.send(req.body.group);
   });
 });
+
+router.get("/get_group", (req, res) => {
+  if (req.user.group) return req.user.group;
+  else return "global";
+});
+
 
 router.get("/stories", (req, res) => {
   Forum.find({}).then((messages) => res.send(messages));
