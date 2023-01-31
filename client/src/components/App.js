@@ -9,6 +9,7 @@ import Messages from "./pages/Messages.js";
 import Calendar from "./pages/Calendar.js";
 import Forum from "./pages/Forum.js";
 import FindGroup from "./pages/FindGroup.js";
+import MakeGroup from "./pages/MakeGroup";
 
 import "../utilities.css";
 
@@ -49,23 +50,22 @@ const App = () => {
 
   return (
     <>
-      <NavBar userId ={userId} handleLogin={handleLogin} handleLogout={handleLogout}/>
-        <div className="App-container">
-        </div>
+      <NavBar userId={userId} handleLogin={handleLogin} handleLogout={handleLogout} />
+      <div className="App-container"></div>
 
       <Router>
         <Skeleton path="/" handleLogin={handleLogin} handleLogout={handleLogout} userId={userId} />
-        <Profile path="/profile" userId={userId}/> 
-        <Messages path="/forum" userId={userId}/>
-        <Calendar path="/calendar" userId={userId}/> 
+        <Profile path="/profile" userId={userId} />
+        <Messages path="/forum" userId={userId} />
+        <Calendar path="/calendar" userId={userId} />
         <NotFound default />
-        <Forum path="/messages" userId={userId}/>
-        <FindGroup path="/findgroup"/>
+        <Forum path="/messages" userId={userId} />
+        <FindGroup path="/findgroup" />
+        <MakeGroup path="/makegroup" />
       </Router>
     </>
   );
-  }
+};
 export default App;
-
 
 //<Home path='/home' />

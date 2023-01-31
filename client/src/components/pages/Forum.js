@@ -64,16 +64,16 @@ const Forum = (props) => {
       // there's nothing to load. (Also prevents data races with socket event)
       if (props.userId) {
         setActiveUsers([ALL_CHAT].concat(data.activeUsers));
-      };
+      }
     });
   }, []);
 
   useEffect(() => {
     const addMessages = (data) => {
-        setActiveChat(prevActiveChat => ({
-          recipient: prevActiveChat.recipient,
-          messages: prevActiveChat.messages.concat(data),
-        }));
+      setActiveChat((prevActiveChat) => ({
+        recipient: prevActiveChat.recipient,
+        messages: prevActiveChat.messages.concat(data),
+      }));
     };
     socket.on("message", addMessages);
     return () => {
@@ -101,7 +101,7 @@ const Forum = (props) => {
   };
 
   if (!props.userId) {
-     return <div>Log in before using Group Messages</div>;
+    return <div className="loginForForum">Log in before using Group Messages</div>;
   }
 
   return (
@@ -109,14 +109,14 @@ const Forum = (props) => {
       <div className="u-relative Forum-container">
         <h1 className="forum-title">Group Messages</h1>
         <div className="lines">
-                <div className="diamond" />
+          <div className="diamond" />
         </div>
-            <div className="Forum-chatContainer u-relative">
-            <Chat data={activeChat} />
-            </div>
+        <div className="Forum-chatContainer u-relative">
+          <Chat data={activeChat} />
         </div>
+      </div>
     </>
   );
-}
+};
 
 export default Forum;
