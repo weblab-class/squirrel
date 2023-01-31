@@ -5,15 +5,12 @@ const UserSchema = new mongoose.Schema({
     googleid: String,
     username: String,
     password: String,
-    preferences: {
-       allergies: [String],
-       restrictions: [String],
-       time: String,
-       cookingpref: String
-    },
+    allergies: [String],
+    restrictions: [String],
+    times: [String],
     name: String,
     img: String,
-    location: String,
+    locations: [String],
     badges: String,
     group: String
 });

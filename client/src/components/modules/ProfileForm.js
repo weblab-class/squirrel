@@ -1,107 +1,129 @@
 import React, { useState } from "react";
 import "./ProfileForm.css";
-import Select from "react-select";
-
-// import Multiselect from 'multiselect-react-dropdown';
+import select from "react-select";
+import { post } from "../../utilities";
+//import Select from 'react-dropdown-select';
 
  const Form = (props) => {
-//     this.state = {
-//         options: [{name: 'Peanuts', id: 1},{name: 'Nuts', id: 2}]
-//     // };
-//     //       { item_id: 1, item_text: 'Peanuts' },
-//     //       { item_id: 2, item_text: 'Nuts' },
-//     //       { item_id: 3, item_text: 'Soy' },
-//     //       { item_id: 4, item_text: 'Gluten' },
-//     //       { item_id: 5, item_text: 'Shellfish' },
-//     //       { item_id: 6, item_text: 'Milk' },
-//     //       { item_id: 7, item_text: 'Fish' },
-//     //       { item_id: 8, item_text: 'Eggs' },
-//     //       { item_id: 9, item_text: 'Sesame' },
-//     //       { item_id: 10, item_text: 'Corn' },
-//     //       { item_id: 11, item_text: 'Gluten' },
-//     //     ];
-    
-//     }
-//     <Multiselect
-//     options={this.state.options} // Options to display in the dropdown
-//     selectedValues={this.state.selectedValue} // Preselected value to persist in dropdown
-//     onSelect={this.onSelect} // Function will trigger on select event
-//     onRemove={this.onRemove} // Function will trigger on remove event
-//     displayValue="name" // Property name to display in the dropdown options
-//     /> 
 
-//     onSelect(selectedList, selectedItem) {
-        
-//     }
-    return (
+function getSelectValues(select) {
+    var result = [];
+    var options = select && select.options;
+    var opt;
+  
+    for (var i=0, iLen=options.length; i<iLen; i++) {
+      opt = options[i];
+  
+      if (opt.selected) {
+        result.push(opt.value || opt.text);
+      }
+    }
+    return result;
+  }
+
+return (
     <>
         <h1 className="Prefform">Preferences</h1>
-        <label for="Location">Location: </label>
-        <form action="DATAVASEEEESHREYA HELPPPPPPPP" method="post"> 
-            <select multiple className="chosen-select" name="test">
-                <option >Off-campus</option>
-                <option >Maseeh</option>
-                <option >McCormick</option>
-                <option>Baker</option>
-                <option>Burton Connor</option>
-                <option >MacGregor</option>
-                <option >East Campus</option>
-                <option >New House</option>
-                <option >Next</option>
-                <option >New Vassar</option>
-                <option >Simmons</option>
-                <option >Random Hall</option>
-                <option>Cambridge</option>
-                <option >Boston</option>
-                <option >Other</option>
-            </select>
-            <input type="submit"></input>
-        </form>
-        <br/>
-        <label for="Preferences">Food Restrictions: </label>
-        <form action="DATAVASEEEESHREYA HELPPPPPPPP" method="post"> 
-            <select multiple>
-                <option >Kosher</option>
-                <option >Vegetarian</option>
-                <option>Vegan</option>
-                <option >Keto</option>
-                <option >Other</option>
-            </select>
-            <input type="submit"></input>
-        </form>
-        <br/>
-        <label for="Preferences">Allergies: </label>
-        <form action="DATAVASEEEESHREYA HELPPPPPPPP" method="post"> 
-            <select multiple>
-                <option value="Peanuts">Peanuts</option>
-                <option value="Nuts">Nuts</option>
-                <option value="Soy">Soy</option>
-                <option value="Gluten">Gluten</option>
-                <option value="Shellfish">Shellfish</option>
-                <option value="Milk">Milk</option>
-                <option value="Fish">Fish</option>
-                <option value="Eggs">Eggs</option>
-                <option value="Eggs">Other</option>
-            </select>
-            <input type="submit"></input>
-        </form>
-        <br/>
-        <label for="Preferences">Cooking Preferences: </label>
-        <form action="DATAVASEEEESHREYA HELPPPPPPPP" method="post"> 
-            <select multiple>
-                <option value="Daytime">Morning (8:00-12:00) </option>
-                <option value="Daytime">Afternoon (12:00-16:00)</option>
-                <option value="Evening">Night (16:00-20:00)</option>
-            </select>
-            <input type="submit"></input>
-        </form>
-        
-
-        
-        {/* <select name="allergies" id = "allergies">
-            
-
-        </select> */}
+        <div className="grid2Prefs">
+            <div className="gridPrefs">
+            <div className="gridBoxes">
+                <label for="Location" className="lable">Location: </label>
+                <form>
+                    <select multiple className="chosen-select" id="locations">
+                        <option >Off-campus</option>
+                        <option >Maseeh</option>
+                        <option >McCormick</option>
+                        <option>Baker</option>
+                        <option>Burton Conner</option>
+                        <option >MacGregor</option>
+                        <option >East Campus</option>
+                        <option >New House</option>
+                        <option >Next</option>
+                        <option >New Vassar</option>
+                        <option >Simmons</option>
+                        <option >Random Hall</option>
+                        <option>Cambridge</option>
+                        <option >Boston</option>
+                        <option >Other</option>
+                    </select>
+                    {/* <input type="submit"></input> */}
+                </form>
+                <br/>
+                {/* <button onClick={rahhh("locations")}> Submit </button> */}
+                <button onClick= {() => {
+                    console.log(getSelectValues(document.getElementById('locations')));
+                    post("/api/editpreferences", {
+                        locations: getSelectValues(document.getElementById('locations'))
+                    }).then((res) => console.log(res));
+                }}>Show selected values</button>
+            </div>
+            <div className="gridBoxes">
+                <label for="Preferences" className="lable">Food Restrictions: </label>
+                <form> 
+                    <select multiple className="chosen-select" id="restrictions">
+                        <option >Kosher</option>
+                        <option >Vegetarian</option>
+                        <option>Vegan</option>
+                        <option >Keto</option>
+                        <option >Other</option>
+                    </select>
+                    {/* <input type="submit"></input> */}
+                </form>
+                <br/>
+                <button onClick= {() => {
+                    console.log(getSelectValues(document.getElementById('restrictions')));
+                    post("/api/editpreferences", {
+                        restrictions: getSelectValues(document.getElementById('restrictions'))
+                    }).then((res) => console.log(res));
+                }}>Show selected values</button>
+            </div>
+            </div>
+            <div className="gridPrefs">
+                <div className="gridBoxes">
+                <label for="Preferences" className="lable">Allergies: </label>
+                <form> 
+                    <select multiple className="chosen-select" id="allergies">
+                        <option value="Peanuts">Peanuts</option>
+                        <option value="Nuts">Nuts</option>
+                        <option value="Soy">Soy</option>
+                        <option value="Gluten">Gluten</option>
+                        <option value="Shellfish">Shellfish</option>
+                        <option value="Milk">Milk</option>
+                        <option value="Fish">Fish</option>
+                        <option value="Eggs">Eggs</option>
+                        <option value="Other">Other</option>
+                    </select>
+                    {/* <input type="submit"></input> */}
+                </form>
+                <br/>
+                <button onClick= {() => {
+                    console.log(getSelectValues(document.getElementById('allergies')));
+                    post("/api/editpreferences",{ 
+                        allergies:getSelectValues(document.getElementById('allergies'))
+                    }).then((res) => console.log(res));
+                }}>Show selected values</button>
+                </div>
+                <div className="gridBoxes">
+                <label for="Preferences" className="lable">Cooking Preferences: </label>
+                <form> 
+                    <select multiple className="chosen-select" id="cookingprefs">
+                        <option value="Morning">Morning (8a-12p) </option>
+                        <option value="Afternoon">Afternoon (12p-4p)</option>
+                        <option value="Evening">Night (4p-8p)</option>
+                        <option value="Late">Late Night (8p-12a)</option>
+                    </select>
+                    {/* <input type="submit"></input> */}
+                </form>
+                <br/>
+                <button onClick= {() => {
+                    console.log(getSelectValues(document.getElementById('cookingprefs')));
+                    post("/api/editpreferences", 
+                        {times:getSelectValues(document.getElementById('cookingprefs'))
+                    }).then((res) => console.log(res));
+                }}>Show selected values</button>
+                </div>
+        </div>
+    </div>   
       
     </>
     );

@@ -27,8 +27,10 @@ const Profile = (props) => {
     const handleButton = (event) => {
 
     }
+
     // function myFunction() {
     //     window.location.href = "../editprefs.html";}
+
     if(!props.userId){
         return(
         <div className="login_required">
@@ -55,15 +57,15 @@ const Profile = (props) => {
                 </div>
 
                 <div className="Profile-foodRestrictions u-textLeft">
-                    Food Restrictions: {user.preferences?( user.restrictions ? (user.preferences.restrictions): ("No restrictions")) : ("No restrictions")}
+                    Food Restrictions: {user?( user.restrictions ? (user.restrictions): ("No restrictions")) : ("No restrictions")}
                 </div>
 
                 <div className="Profile-Allergies u-textLeft">
-                    Allergies: {user.preferences? (user.allergies ? (user.preferences.allergies) : "No allergies"): ("No allergies")}
+                    Allergies: {user? (user.allergies ? (user.allergies) : "No allergies"): ("No allergies")}
                 </div>
 
                 <div className="Cooking Preferences u-textBottom">
-                    Cooking Preferences: {user.preferences? (user.time ? (user.preferences.time) :"No time preferences") : "No time preferences"}
+                    Cooking Preferences: {user? (user.time ? (user.time) :"No time preferences") : "No time preferences"}
                 </div>
                 <br/>
             </div>
@@ -72,8 +74,14 @@ const Profile = (props) => {
             </div>
             <div className="right">
             {/* <GrEdit size={42}/> <button className="buttonCust"> Edit </button>  */}
-            <button onClick={() => { console.log("clicked");
-                setShowForm(!showForm);}} >{showForm ? "Save": "Edit"}</button>
+            <button onClick={() => { 
+                console.log("clicked");
+                setShowForm(!showForm);
+                // showForm ? (post("/api/editpreferences", body={
+                //     location: 
+                // })):""
+                }}>
+            {showForm ? "Save": "Edit"}</button>
             </div>
             {showForm ? <Form/> : ""}
         </div>   
