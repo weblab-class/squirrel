@@ -198,6 +198,7 @@ router.get("/comment", (req, res) => {
 
 router.post("/update_location", (req, res) => {
   console.log(req);
+  console.log("BODY UNDER");
   console.log(req.body);
   console.log(req.body._id);
   return 1;
