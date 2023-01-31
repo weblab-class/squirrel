@@ -10,6 +10,7 @@ rows */
     display: flex;
     flex-direction: row;
     width: 50%;
+    padding-bottom: 30px;
 
 }
 
@@ -24,4 +25,10 @@ rows */
 
 .gridBoxes{
     width: 50%;
+}
+
+.lable{
+    font-weight: bold;
+    font-size: x-large;
+    color: rgb(44, 68, 132);
 }

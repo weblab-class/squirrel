@@ -176,6 +176,13 @@ router.post("/join_group", (req, res) => {
   });
 });
 
+router.post("/editpreferences", (req, res) => {
+  User.update({preferences: {allergies: req.body.allergies} }, {preferences: {location: req.body.location}}, (err, affected, resp) => {
+    if (err) console.error(err);
+    console.log(resp);
+  });
+});
+
 router.get("/stories", (req, res) => {
   Forum.find({}).then((messages) => res.send(messages));
 });

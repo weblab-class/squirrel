@@ -72,8 +72,14 @@ const Profile = (props) => {
             </div>
             <div className="right">
             {/* <GrEdit size={42}/> <button className="buttonCust"> Edit </button>  */}
-            <button onClick={() => { console.log("clicked");
-                setShowForm(!showForm);}} >{showForm ? "Save": "Edit"}</button>
+            <button onClick={() => { 
+                console.log("clicked");
+                setShowForm(!showForm);
+                // showForm ? (post("/api/editpreferences", body={
+                //     location: 
+                // })):""
+                }}>
+            {showForm ? "Save": "Edit"}</button>
             </div>
             {showForm ? <Form/> : ""}
         </div>   
