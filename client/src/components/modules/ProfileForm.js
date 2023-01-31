@@ -52,9 +52,9 @@ return (
                 {/* <button onClick={rahhh("locations")}> Submit </button> */}
                 <button onClick= {() => {
                     console.log(getSelectValues(document.getElementById('locations')));
-                    post("/api/editpreferences", body={
-                        location:getSelectValues(document.getElementById('locations'))
-                    })
+                    post("/api/editpreferences", {
+                        location: getSelectValues(document.getElementById('locations'))
+                    }).then((res) => console.log(res));
                 }}>Show selected values</button>
             </div>
             <div className="gridBoxes">
@@ -72,9 +72,9 @@ return (
                 <br/>
                 <button onClick= {() => {
                     let all = getSelectValues(document.getElementById('restrictions'));
-                    post("/api/editpreferences", body={
+                    post("/api/editpreferences", {
                         restrictions: getSelectValues(document.getElementById('restrictions'))
-                    });
+                    }).then((res) => console.log(res));
                 }}>Show selected values</button>
             </div>
             </div>
@@ -98,9 +98,9 @@ return (
                 <br/>
                 <button onClick= {() => {
                     console.log(getSelectValues(document.getElementById('allergies')));
-                    post("/api/editpreferences", body={
+                    post("/api/editpreferences",{ 
                         allergies:getSelectValues(document.getElementById('allergies'))
-                    });
+                    }).then((res) => console.log(res));
                 }}>Show selected values</button>
                 </div>
                 <div className="gridBoxes">
@@ -117,9 +117,9 @@ return (
                 <br/>
                 <button onClick= {() => {
                     console.log(getSelectValues(document.getElementById('cookingprefs')));
-                    post("/api/editpreferences", body={
-                        cookingpreferences:getSelectValues(document.getElementById('cookingprefs'))
-                    });
+                    post("/api/editpreferences", 
+                        {cookingpreferences:getSelectValues(document.getElementById('cookingprefs'))
+                    }).then((res) => console.log(res));
                 }}>Show selected values</button>
                 </div>
         </div>

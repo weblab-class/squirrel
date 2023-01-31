@@ -27,8 +27,10 @@ const Profile = (props) => {
     const handleButton = (event) => {
 
     }
+
     // function myFunction() {
     //     window.location.href = "../editprefs.html";}
+
     if(!props.userId){
         return(
         <div className="login_required">
