@@ -1,3 +1,19 @@
-.title{
-    padding: 0 15px;
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* padding: 0px -8px 0px 0px; */
+  width: 100%;
+}
+
+.fg_container {
+  padding: 0px 15px;
+}
+
+.make {
+  border: black;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 10px;
+  padding: 4px;
 }

@@ -129,6 +129,16 @@ const Skeleton = ({ userId }) => {
         <>
           <div className="noLoginForumColumn">
             <div className="Title">Forum</div>
+            <div className="listOfPosts">
+              {forum.split("\n").map(function (item) {
+                return (
+                  <span>
+                    {item}
+                    <br />
+                  </span>
+                );
+              })}
+            </div>
           </div>
         </>
       )}
