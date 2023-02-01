@@ -182,18 +182,12 @@ const collect = require('collect.js');
 router.post("/editpreferences", (req, res) => {
   let upd_thing = {};
 
-  if (req.body.locations) upd_thing.locations = req.body.locations;
+  if (req.body.location) upd_thing.locations = req.body.location;
   if (req.body.allergies) {
-    const alls = collect(req.body.allergies)
-    if (!alls.contains("None")){
-      upd_thing.allergies = req.body.allergies;
-    } 
+    upd_thing.allergies = req.body.allergies;
   } 
   if (req.body.restrictions) {
-    const rests = collect(req.body.restrictions)
-    if (!rests.contains("None")){
-      upd_thing.restrictions = req.body.restrictions;
-    } 
+    upd_thing.restrictions = req.body.restrictions;
   }
   if (req.body.times)  upd_thing.times = req.body.times;
 
