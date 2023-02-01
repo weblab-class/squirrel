@@ -44,6 +44,7 @@ const Forum = (props) => {
   });
 
   // POPULATE WITH GROUPS OF USER
+  // const options = props.groups;
   const options = [
     { key: 1, value: "Test 1" },
     { key: 2, value: "Test 2" },
