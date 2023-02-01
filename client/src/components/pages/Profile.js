@@ -51,23 +51,41 @@ const Profile = (props) => {
                 </h1>
             </div>
 
-            <div className="Profile-information">
-                 <div className="Profile-location u-textLeft">
-                    <MdLocationOn/> {user.location ? user.location : "No location"}
-                </div>
+            <div className="Profile-container">
+                <div className="Profile-info">
+                    <div className="Profile-location u-textLeft">
+                        {/* <MdLocationOn/>  */}
+                        <b className="headers">Location: </b>
+                        <span>{user.locations ?  (user.locations.map(loc => {
+                            return loc + " "
+                        })) : "No location"}
+                        </span>
+                    </div>
 
-                <div className="Profile-foodRestrictions u-textLeft">
-                    Food Restrictions: {user?( user.restrictions ? (user.restrictions): ("No restrictions")) : ("No restrictions")}
-                </div>
 
-                <div className="Profile-Allergies u-textLeft">
-                    Allergies: {user? (user.allergies ? (user.allergies) : "No allergies"): ("No allergies")}
-                </div>
+                    <div className="Profile-foodRestrictions u-textLeft">
+                        <span className="headers">
+                        Food Restrictions: </span>
+                        <span>{( user.restrictions ? (user.restrictions.map(rest => {
+                            return rest + " "
+                        })): ("No restrictions"))}</span>
+                    </div>
 
-                <div className="Cooking Preferences u-textBottom">
-                    Cooking Preferences: {user? (user.time ? (user.time) :"No time preferences") : "No time preferences"}
+                    <div className="Profile-Allergies u-textLeft">
+                        <span className = "headers">Allergies: </span>
+                        <span>{user.allergies ? (user.allergies.map(all => {
+                            return all + " "
+                        })) : "No allergies"} </span>
+                    </div>
+
+                    <div className="Cooking Preferences u-textBottom">
+                        <span className = "headers"> Cooking Preferences:</span>
+                        <span> {user.times ? (user.times.map(time => {
+                            return time + " "
+                        })) :"No time preferences"} </span>
+                    </div>
+                    <br/>
                 </div>
-                <br/>
             </div>
             <div className="lines">
                 <div className="diamond" />

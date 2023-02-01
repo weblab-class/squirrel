@@ -46,10 +46,8 @@ return (
                         <option >Boston</option>
                         <option >Other</option>
                     </select>
-                    {/* <input type="submit"></input> */}
                 </form>
                 <br/>
-                {/* <button onClick={rahhh("locations")}> Submit </button> */}
                 <button onClick= {() => {
                     console.log(getSelectValues(document.getElementById('locations')));
                     post("/api/editpreferences", {
@@ -66,6 +64,7 @@ return (
                         <option>Vegan</option>
                         <option >Keto</option>
                         <option >Other</option>
+                        <option>None</option>
                     </select>
                     {/* <input type="submit"></input> */}
                 </form>
@@ -92,6 +91,7 @@ return (
                         <option value="Fish">Fish</option>
                         <option value="Eggs">Eggs</option>
                         <option value="Other">Other</option>
+                        <option value="None">None</option>
                     </select>
                     {/* <input type="submit"></input> */}
                 </form>
