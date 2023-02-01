@@ -5,10 +5,11 @@ const GroupSchema = new mongoose.Schema({
     users: [String],
     allergies: [String],
     restrictions: [String],
-    location: String,
+    location: [String],
     img: String,
     description: String,
     title: String,
+    times: [String],
     link: String
 });
 
