@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
-
+import "./SingleStory.css"
 /**
  * Story is a component that renders creator and content of a story
  *
@@ -13,9 +13,9 @@ import { Link } from "@reach/router";
 const SingleStory = (props) => {
   return (
     <div className="Card-story">
-      <Link to={`/profile/${props.creator_id}`} className="u-link u-bold">
-        {props.creator_name}
-      </Link>
+      <div className="name">
+        {props.username}
+        </div>
       <p className="Card-storyContent">{props.content}</p>
     </div>
   );

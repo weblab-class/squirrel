@@ -32,7 +32,8 @@ const Messages = (props) => {
       <Card
         key={`Card_${storyObj._id}`}
         _id={storyObj._id}
-        creator_name={storyObj.creator_name}
+        // why does changing this below line from creator_name to username make everything else fineeeeee
+        username={storyObj.username}
         creator_id={storyObj.creator_id}
         userId={props.userId}
         content={storyObj.content}
