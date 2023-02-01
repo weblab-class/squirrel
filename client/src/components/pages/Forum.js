@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ChatList from "../modules/ChatList.js";
 import Chat from "../modules/Chat.js";
-import Dropdown from "../modules/Dropdown.js";
 import { socket } from "../../client-socket.js";
 import { get } from "../../utilities";
 
@@ -36,6 +35,7 @@ const Forum = (props) => {
    */
 
   const [activeUsers, setActiveUsers] = useState([]);
+  const [group, setGroup] = useState([]);
   const [selectedOption, setSelectedOption] = useState("");
   const [options, setOptions] = useState("options");
 
@@ -57,11 +57,11 @@ const Forum = (props) => {
   };
 
   useEffect(() => {
-    document.title = "Forum";
+    document.title = "Messages";
   }, []);
 
   useEffect(() => {
-    
+    get("/api/whoami").then((data) => {setGroup(data.group[0] ? data.group[0] : "global")});
   }, []);
 
   useEffect(() => {
@@ -117,17 +117,7 @@ const Forum = (props) => {
   return (
     <>
       <div className="u-relative Forum-container">
-        <h1 className="forum-title">Group Messages</h1>
-
-        <div className="forum-dropdown">
-          <Dropdown
-            options={options}
-            onChange={(item) => setSelectedOption(item)}
-            selectedKey={selectedOption}
-            placeholder={"Select a group"}
-          />
-          <p>Currently viewing {selectedOption}'s messages</p>
-        </div>
+        <h1 className="forum-title">Group Messages: {group}</h1>
 
         <div className="lines">
                 <div className="diamond" />
