@@ -1,10 +1,9 @@
 import React, { useEffect, useState, Component } from "react";
 import "../modules/SearchBar.js";
-import SB from "../modules/SearchBar.js";
-//import BookData from "./Data.json";
-import { get } from "../../utilities";
+import { post } from "../../utilities";
 
 import "./MakeGroup.css";
+import Form from "../modules/ProfileForm.js";
 
 // props = array of groups (MUST BE AN ARRAY)
 const MakeGroup = (props) => {
@@ -27,6 +26,14 @@ const MakeGroup = (props) => {
         <div className="lines">
           <div className="diamond" />
         </div>
+
+        <div className="giveName">
+          <label>Group Name: </label>
+          <input type="text" required />
+        </div>
+        <Form />
+
+        <button>Save</button>
       </div>
     </>
   );

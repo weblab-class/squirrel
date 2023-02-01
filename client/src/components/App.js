@@ -10,6 +10,7 @@ import Calendar from "./pages/Calendar.js";
 import Forum from "./pages/Forum.js";
 import FindGroup from "./pages/FindGroup.js";
 import MakeGroup from "./pages/MakeGroup";
+import GroupProfile from "./pages/GroupProfile";
 
 import "../utilities.css";
 
@@ -62,6 +63,7 @@ const App = () => {
         <Forum path="/messages" userId={userId} />
         <FindGroup path="/findgroup" />
         <MakeGroup path="/makegroup" />
+        <GroupProfile path="/testingstuff" userId={userId} />
       </Router>
     </>
   );

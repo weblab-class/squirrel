@@ -7,7 +7,7 @@ import "./NotFound.css";
 const NotFound = () => {
   return (
     <div className="whydoyouexist">
-      {/* <NavBar/> */}
+      {/* <NavBar /> */}
       <h1>404 Not Found</h1>
       <p>The page you requested couldn't be found.</p>
       <p>You messed up so bad that two NavBars have appeared out of disgust.</p>
