@@ -27,15 +27,6 @@ const Profile = (props) => {
     const [user, setUser] = useState("user");
 
     const [showForm, setShowForm] = useState(false);
-    
-    useEffect(() => {
-        document.title = "Profile Page";
-        get(`/api/whoami`, { userid: props.userId }).then((userObj) => setUser(userObj));
-      }, []);
-
-    const handleButton = (event) => {
-
-  const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
     document.title = "Profile Page";
