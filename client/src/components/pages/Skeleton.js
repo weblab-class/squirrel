@@ -16,6 +16,7 @@ const Skeleton = ({ userId }) => {
   const [events, setEvents] = useState("event");
   const [forum, setForum] = useState("forum");
   const [messages, setMessages] = useState("messages");
+  const [advice, setAdvice] = useState("advice");
 
   useEffect(() => {
     get(`/api/get_events`, {}).then((userObj) => {
@@ -58,6 +59,22 @@ const Skeleton = ({ userId }) => {
       }
       console.log(str);
       setMessages(str);
+    });
+  }, []);
+
+  useEffect(() => {
+    get(`/api/recommend`, {}).then((userObj) => {
+      let str = "";
+      let max_val = userObj.length > 10 ? 10 : userObj.length;
+      for (let i = userObj.length - 1; i > userObj.length - 1 - max_val; i--) {
+        if (userObj[i].title.length > 20) {
+          i--;
+        } else {
+          str += `${userObj[i].title}\n`;
+        }
+      }
+      console.log(str);
+      setAdvice(str);
     });
   }, []);
 
@@ -121,6 +138,18 @@ const Skeleton = ({ userId }) => {
                   Advice
                 </Link>
                 <div className="lines2" />
+
+                <div className="listOfEvents">
+                  {advice.split("\n").map(function (item) {
+                    return (
+                      <span>
+                        {item}
+                        <br />
+                      </span>
+                    );
+                  })}
+                </div>
+
               </div>
             </div>
           </div>
