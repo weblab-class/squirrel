@@ -175,7 +175,7 @@ router.post("/join_group", (req, res) => {
     if (err) console.error(err);
       req.user.group = req.body.group;
       console.log(resp);
-      res.send(req.body.group);
+      // res.send(req.body.group);
   });
 });
 
