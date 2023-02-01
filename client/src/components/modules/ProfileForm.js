@@ -52,7 +52,7 @@ const Form = (props) => {
                     post("/api/editpreferences", {
                         locations: getSelectValues(document.getElementById('locations'))
                     }).then((res) => console.log(res));
-                }}>Show selected values</button>
+                }}>Edit</button>
             </div>
             <div className="gridBoxes">
                 <label for="Preferences" className="lable">Food Restrictions: </label>
@@ -73,7 +73,7 @@ const Form = (props) => {
                     post("/api/editpreferences", {
                         restrictions: getSelectValues(document.getElementById('restrictions'))
                     }).then((res) => console.log(res));
-                }}>Show selected values</button>
+                }}>Edit</button>
             </div>
             </div>
             <div className="gridPrefs">
@@ -100,7 +100,7 @@ const Form = (props) => {
                     post("/api/editpreferences",{ 
                         allergies:getSelectValues(document.getElementById('allergies'))
                     }).then((res) => console.log(res));
-                }}>Show selected values</button>
+                }}>Edit</button>
                 </div>
                 <div className="gridBoxes">
                 <label for="Preferences" className="lable">Cooking Preferences: </label>
@@ -119,7 +119,7 @@ const Form = (props) => {
                     post("/api/editpreferences", 
                         {times:getSelectValues(document.getElementById('cookingprefs'))
                     }).then((res) => console.log(res));
-                }}>Show selected values</button>
+                }}>Edit</button>
                 </div>
         </div>
       </div>
