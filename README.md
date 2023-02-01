@@ -6,7 +6,7 @@ To be honest, we're not too sure.
 
 It's best described as a mix of Discord's group messaging, Facebook's color aesthetic, Github's and Reddit's dashboard, and the hunger of three college students.
 
-Here you can find groups at MIT (Can be adjusted to include other locations in the future) or in the surrounding Cambridge/Boston area to cook with. Of course, you can use this wonderful website to find other groups oustide of this area.
+Here you can find groups at MIT (can be adjusted to include other locations in the future) or in the surrounding Cambridge/Boston area to cook with. Of course, you can use this wonderful website to find other groups oustide of this area.
 
 Not only this, but you can also adjust your own preferences to account for common allergies (ex. nuts, shellfish, soy, etc.) and restrictions (ex. vegan, kosher, etc.). You can also change preferences for your groups so that people can easily find your group through filtering through!
 
