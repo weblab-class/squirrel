@@ -73,14 +73,15 @@
 
 .noLoginForumColumn {
   text-align: center;
-  width: 75%;
+  width: 50%;
   font-weight: bold;
   font-size: x-large;
   padding-left: 20px;
   padding-right: 20px;
 
-  margin-left: 15px;
-  margin-right: 15px;
+  margin: 0;
+  position: relative;
+  left: 25%;
 
   border: black;
   border-style: solid;
@@ -88,7 +89,7 @@
   border-radius: 10px;
   padding-top: 4px;
 
-  flex: 1 1 auto;
+  /* flex: 1 1 auto; */
 }
 
 .eventsColumn {
