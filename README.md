@@ -10,7 +10,7 @@ Here you can find groups at MIT (can be adjusted to include other locations in t
 
 Not only this, but you can also adjust your own preferences to account for common allergies (ex. nuts, shellfish, soy, etc.) and restrictions (ex. vegan, kosher, etc.). You can also change preferences for your groups so that people can easily find your group through filtering through!
 
-Make friends, eat questionable food that you make together, and ignore the seven groups called "Kradia" that we created for testing purposes.
+Make friends, eat questionable food that you make together, and ignore the ~~seven~~ eleven groups called "Kradia" that we created for testing purposes.
 
 ## How to use:
 
