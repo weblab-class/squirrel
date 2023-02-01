@@ -1,3 +1,11 @@
 .mg_container {
   padding: 0px 15px;
+  text-decoration: none;
+}
+
+.giveName {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial,
+    sans-serif;
+  font-weight: 500px;
+  font-size: xx-large;
 }

@@ -4,16 +4,15 @@ import select from "react-select";
 import { post } from "../../utilities";
 //import Select from 'react-dropdown-select';
 
- const Form = (props) => {
-
-function getSelectValues(select) {
+const Form = (props) => {
+  function getSelectValues(select) {
     var result = [];
     var options = select && select.options;
     var opt;
-  
-    for (var i=0, iLen=options.length; i<iLen; i++) {
+
+    for (var i = 0, iLen = options.length; i < iLen; i++) {
       opt = options[i];
-  
+
       if (opt.selected) {
         result.push(opt.value || opt.text);
       }
@@ -21,7 +20,7 @@ function getSelectValues(select) {
     return result;
   }
 
-return (
+  return (
     <>
         <h1 className="Prefform">Preferences</h1>
         <div className="grid2Prefs">
@@ -123,10 +122,9 @@ return (
                 }}>Show selected values</button>
                 </div>
         </div>
-    </div>   
-      
+      </div>
     </>
-    );
+  );
 };
 
 export default Form;

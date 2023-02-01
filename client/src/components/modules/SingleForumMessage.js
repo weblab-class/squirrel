@@ -15,6 +15,6 @@ const SingleForumComment = (props) => {
       <span className="SingleMessage-content">{props.message.content}</span>
     </div>
   );
-}
+};
 
 export default SingleForumComment;
