@@ -139,6 +139,16 @@ router.get("/get_groups", (req, res) => {
   });
 });
 
+router.get("/groups_by_usr", (req, res) => {
+  User.find({_id: req.user._id}, "group", (err, groups) => {
+    if (err) return handleError(err);
+    console.log(groups);
+    console.log("GROUPS ABOVE");
+    res.send(groups);
+  });
+});
+
+
 router.post("/del_event", (req, res) => {
   Event.findOneAndDelete({title: req.body.title, start: req.body.start, end: req.body.end}, (err) => {if (err) console.error(err);})
 });

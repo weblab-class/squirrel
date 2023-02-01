@@ -37,6 +37,7 @@ const Forum = (props) => {
 
   const [activeUsers, setActiveUsers] = useState([]);
   const [selectedOption, setSelectedOption] = useState("");
+  const [options, setOptions] = useState("options");
 
   const [activeChat, setActiveChat] = useState({
     recipient: ALL_CHAT,
@@ -45,12 +46,14 @@ const Forum = (props) => {
 
   // POPULATE WITH GROUPS OF USER
   // const options = props.groups;
+/*
   const options = [
     { key: 1, value: "Test 1" },
     { key: 2, value: "Test 2" },
     { key: 3, value: "Test 3" },
     { key: 4, value: "Test 4" },
   ];
+*/
 
   const loadMessageHistory = (recipient) => {
     get("/api/chat", { recipient_id: recipient._id }).then((messages) => {
@@ -68,6 +71,11 @@ const Forum = (props) => {
   useEffect(() => {
     loadMessageHistory(activeChat.recipient);
   }, [activeChat.recipient._id]);
+
+
+  useEffect(() => {
+    get("/api/groups_by_usr", {}).then((res) => setOptions(res));
+  });
 
   useEffect(() => {
     get("/api/activeUsers").then((data) => {
