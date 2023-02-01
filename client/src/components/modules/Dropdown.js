@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import withClickOutside from "./withClickOutside";
+import withClickOutside from "./withClickOutside.js";
 
 const Dropdown = React.forwardRef(
   ({ options, placeholder = "", onChange, selectedKey, open, setOpen }, ref) => {
@@ -59,7 +59,7 @@ const Dropdown = React.forwardRef(
 
           {selectedKey || inputValue ? (
             <div className="input-clean-container" onClick={clearDropdown}>
-              x
+              X
             </div>
           ) : null}
         </div>
