@@ -149,7 +149,12 @@ const Skeleton = ({ userId }) => {
                     );
                   })}
                 </div>
+              </div>
 
+              <div className="joinColumn">
+                <Link to="/findgroup/" className="Title">
+                  Join a Group
+                </Link>
               </div>
             </div>
           </div>
