@@ -178,14 +178,17 @@ router.post("/join_group", (req, res) => {
       res.send(req.body.group);
   });
 });
-
+const collect = require('collect.js'); 
 router.post("/editpreferences", (req, res) => {
-
   let upd_thing = {};
 
-  if (req.body.locations) upd_thing.locations = req.body.locations;
-  if (req.body.allergies)  upd_thing.allergies = req.body.allergies;
-  if (req.body.restrictions)  upd_thing.restrictions = req.body.restrictions;
+  if (req.body.location) upd_thing.locations = req.body.location;
+  if (req.body.allergies) {
+    upd_thing.allergies = req.body.allergies;
+  } 
+  if (req.body.restrictions) {
+    upd_thing.restrictions = req.body.restrictions;
+  }
   if (req.body.times)  upd_thing.times = req.body.times;
 
   User.update(

@@ -94,3 +94,17 @@
     font-size: x-large;
     text-align: center;
 }
+
+.headers{
+    font-weight: bolder;
+    color: rgb(14, 14, 171);
+    font-size: 20px;
+}
+
+.Profile-container{
+    text-align: center;
+}
+.Profile-info{
+    display: inline-block; 
+    text-align: left;
+}
