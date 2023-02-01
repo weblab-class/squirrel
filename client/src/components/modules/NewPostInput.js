@@ -95,6 +95,6 @@ const NewMessage = (props) => {
 
   // TODO (step 1.1): populate NewMessage
   return <div></div>;
-}
+};
 
 export { NewComment, NewStory, NewMessage };

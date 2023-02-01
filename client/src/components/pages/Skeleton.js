@@ -135,7 +135,7 @@ const Skeleton = ({ userId }) => {
               </div>
               <div className="recommendationsColumn">
                 <Link to="/findgroup/" className="Title">
-                  Advice
+                  Suggested
                 </Link>
                 <div className="lines2" />
 
