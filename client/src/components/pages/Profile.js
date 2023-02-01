@@ -57,7 +57,6 @@ const Profile = (props) => {
           </h1>
         </div>
 
-
             <div className="Profile-container">
                 <div className="Profile-info">
                     <div className="Profile-location u-textLeft">

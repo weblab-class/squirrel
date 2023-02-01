@@ -35,8 +35,7 @@ const Card = (props) => {
     <div className="Card-container">
       <SingleStory
         _id={props._id}
-        creator_name={props.creator_name}
-        creator_id={props.creator_id}
+        username={props.username}
         content={props.content}
       />
       <CommentsBlock
