@@ -1,55 +1,45 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "@reach/router";
-import {MdLocationOn} from "react-icons/md";
+import { MdLocationOn } from "react-icons/md";
 import { get } from "../../utilities";
-import squirrel from "../../public/squirrelpic.jpg"
-import Form from "../modules/ProfileForm.js"
+import squirrel from "../../public/squirrelpic.jpg";
+import Form from "../modules/ProfileForm.js";
 import "./Profile.css";
-import {GrEdit} from "react-icons/gr"; 
-
-// const Form = () => {
-//     return <>
-//         <div>Form</div>
-//         <input type="text" id="fname" name="fname"/>
-//     </>
-// }
+import { GrEdit } from "react-icons/gr";
 
 const Profile = (props) => {
-    const [user, setUser] = useState("user")
+  const [user, setUser] = useState("user");
 
-    const [showForm, setShowForm] = useState(false);
-    
-    useEffect(() => {
-        document.title = "Profile Page";
-        get(`/api/whoami`, { userid: props.userId }).then((userObj) => setUser(userObj));
-      }, []);
+  const [showForm, setShowForm] = useState(false);
 
-    const handleButton = (event) => {
+  useEffect(() => {
+    document.title = "Profile Page";
+    get(`/api/whoami`, { userid: props.userId }).then((userObj) => setUser(userObj));
+  }, []);
 
-    }
+  const handleButton = (event) => {};
+  // function myFunction() {
+  //     window.location.href = "../editprefs.html";}
+  if (!props.userId) {
+    return (
+      <div className="login_required">
+        <br />
+        Please make sure to login to see your profile page!
+      </div>
+    );
+  }
+  return (
+    <>
+      <div className="bigContainer2 center">
+        <div className="Profile-avatarContainer ">
+          <div className="Profile-avatar">
+            <img id="sq_img" src={squirrel} />
+          </div>
 
-    // function myFunction() {
-    //     window.location.href = "../editprefs.html";}
-
-    if(!props.userId){
-        return(
-        <div className="login_required">
-            <br/>
-            Please make sure to login to see your profile page!
-        </div>)
-    }
-    return(
-        <>
-        <div className="bigContainer2 center">
-            <div className="Profile-avatarContainer ">
-                <div className="Profile-avatar"> 
-                    <img id="sq_img" src={squirrel}/>
-                </div>
-
-                <h1 className="Profile-name">
-                    <div className="center">{user.name}</div>
-                </h1>
-            </div>
+          <h1 className="Profile-name">
+            <div className="center">{user.name}</div>
+          </h1>
+        </div>
 
             <div className="Profile-container">
                 <div className="Profile-info">
@@ -110,4 +100,3 @@ const Profile = (props) => {
 }
 
 export default Profile;
-

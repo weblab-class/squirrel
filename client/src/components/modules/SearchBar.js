@@ -28,22 +28,17 @@ function SearchBar({ placeholder, data }) {
   };
 
   const handleGroup = (group) => {
-    if (window.confirm('Are you sure you want to join this group?')) {
-      console.log(group)
-      const body = {group: group.currentTarget.textContent.trim()}
-      post("/api/join_group", body).then((res) => console.log(res))
-    } 
+    if (window.confirm("Are you sure you want to join this group?")) {
+      console.log(group);
+      const body = { group: group.currentTarget.textContent.trim() };
+      post("/api/join_group", body).then((res) => console.log(res));
+    }
   };
 
   return (
     <div className="search">
       <div className="searchInputs">
-        <input
-          type="text"
-          placeholder={placeholder}
-          value={wordEntered}
-          onChange={handleFilter}
-        />
+        <input type="text" placeholder={placeholder} value={wordEntered} onChange={handleFilter} />
         <div className="searchIcon">
           {filteredData.length === 0 ? (
             <GrFormSearch />
@@ -57,7 +52,7 @@ function SearchBar({ placeholder, data }) {
           {filteredData.slice(0, 15).map((value, key) => {
             return (
               <a className="dataItem" href={value.link} target="_blank">
-                 <p onClick={handleGroup}>{value.title}</p>
+                <p onClick={handleGroup}>{value.title}</p>
               </a>
             );
           })}

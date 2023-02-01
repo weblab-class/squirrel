@@ -88,12 +88,12 @@ router.post("/reply", auth.ensureLoggedIn, (req, res) => {
 router.post("/group", auth.ensureLoggedIn, (req, res) => {
   const newGroup = new Group({
     name: req.body.name,
+    title: req.body.name,
     users: [req.user.name],
     restrictions: req.body.restrictions,
     allergies: req.body.allergies,
     location: req.body.location,
-    description: req.body.description,
-    img: req.body.img
+    times: req.body.cookingprefs
   });
   newGroup.save().then((group) => res.send(group));
 });
@@ -153,7 +153,7 @@ router.post("/message", auth.ensureLoggedIn, (req, res) => {
   // insert this message into the database
   const message = new Post({
     username: req.user.name,
-    group: req.user.group ? req.user.group : "global",
+    group: req.user.group[0] ? req.user.group[0] : "global",
     content: req.body.content
   });
   message.save();
@@ -171,7 +171,7 @@ router.post("/story", auth.ensureLoggedIn, (req, res) => {
 });
 
 router.post("/join_group", (req, res) => {
-  User.update({_id: req.user._id}, {group: req.body.group}, (err, affected, resp) => {
+  User.update({_id: req.user._id}, {$push: {group: req.body.group}}, (err, affected, resp) => {
     if (err) console.error(err);
       req.user.group = req.body.group;
       console.log(resp);

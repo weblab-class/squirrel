@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ChatList from "../modules/ChatList.js";
 import Chat from "../modules/Chat.js";
+import Dropdown from "../modules/Dropdown.js";
 import { socket } from "../../client-socket.js";
 import { get } from "../../utilities";
 
@@ -35,11 +36,21 @@ const Forum = (props) => {
    */
 
   const [activeUsers, setActiveUsers] = useState([]);
+  const [selectedOption, setSelectedOption] = useState("");
 
   const [activeChat, setActiveChat] = useState({
     recipient: ALL_CHAT,
     messages: [],
   });
+
+  // POPULATE WITH GROUPS OF USER
+  // const options = props.groups;
+  const options = [
+    { key: 1, value: "Test 1" },
+    { key: 2, value: "Test 2" },
+    { key: 3, value: "Test 3" },
+    { key: 4, value: "Test 4" },
+  ];
 
   const loadMessageHistory = (recipient) => {
     get("/api/chat", { recipient_id: recipient._id }).then((messages) => {
@@ -108,6 +119,17 @@ const Forum = (props) => {
     <>
       <div className="u-relative Forum-container">
         <h1 className="forum-title">Group Messages</h1>
+
+        <div className="forum-dropdown">
+          <Dropdown
+            options={options}
+            onChange={(item) => setSelectedOption(item)}
+            selectedKey={selectedOption}
+            placeholder={"Select a group"}
+          />
+          <p>Currently viewing {selectedOption}'s messages</p>
+        </div>
+
         <div className="lines">
           <div className="diamond" />
         </div>

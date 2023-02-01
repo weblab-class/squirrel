@@ -43,6 +43,6 @@ const Chat = (props) => {
       </div>
     </div>
   );
-}
+};
 
 export default Chat;

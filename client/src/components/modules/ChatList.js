@@ -17,17 +17,16 @@ const ChatList = (props) => {
   return (
     <>
       <h1 className="forum-title">Forum</h1>
-      {props.users
-        .map((user, i) => (
-          <SingleUser
-            key={i}
-            setActiveUser={props.setActiveUser}
-            user={user}
-            active={user === props.active}
-          />
-        ))}
+      {props.users.map((user, i) => (
+        <SingleUser
+          key={i}
+          setActiveUser={props.setActiveUser}
+          user={user}
+          active={user === props.active}
+        />
+      ))}
     </>
   );
-}
+};
 
 export default ChatList;
