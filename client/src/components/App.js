@@ -24,6 +24,7 @@ import { get, post } from "../utilities";
 const App = () => {
   //const [loggedIn, setLoggedIn] = useState(false);
   const [userId, setUserId] = useState(undefined);
+  const [groupId, setGroupId] = useState(undefined);
 
   useEffect(() => {
     get("/api/whoami").then((user) => {
@@ -64,6 +65,7 @@ const App = () => {
         <FindGroup path="/findgroup" />
         <MakeGroup path="/makegroup" />
         <GroupProfile path="/testingstuff" userId={userId} />
+        <GroupProfile path="/group/:groupId" groupI={groupId} />
       </Router>
     </>
   );
